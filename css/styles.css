@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Valorant';
+    src: url('fonts/Valorant Font.ttf') format('truetype'),
+         url('fonts/Sddystopiandemo-GO7xa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Eurostile Extended';
+    src: url('fonts/EurostileExtended-Roman.eot');
+    src: local('Eurostile Extended'), local('EurostileExtended-Roman'),
+        url('fonts/EurostileExtended-Roman.eot?#iefix') format('embedded-opentype'),
+        url('fonts/EurostileExtended-Roman.woff2') format('woff2'),
+        url('fonts/EurostileExtended-Roman.woff') format('woff'),
+        url('fonts/EurostileExtended-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Eurostile';
+    src: url('fonts/Eurostile-Oblique.eot');
+    src: local('Eurostile-Oblique'),
+        url('fonts/Eurostile-Oblique.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Eurostile-Oblique.woff2') format('woff2'),
+        url('fonts/Eurostile-Oblique.woff') format('woff'),
+        url('fonts/Eurostile-Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'EuroStyle';
+    src: url('fonts/EuroStyleNormal.eot');
+    src: local('EuroStyle Normal'), local('EuroStyleNormal'),
+        url('fonts/EuroStyleNormal.eot?#iefix') format('embedded-opentype'),
+        url('fonts/EuroStyleNormal.woff2') format('woff2'),
+        url('fonts/EuroStyleNormal.woff') format('woff'),
+        url('fonts/EuroStyleNormal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Eurostile';
+    src: url('fonts/EurostileBold.eot');
+    src: local('Eurostile Bold'), local('EurostileBold'),
+        url('fonts/EurostileBold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/EurostileBold.woff2') format('woff2'),
+        url('fonts/EurostileBold.woff') format('woff'),
+        url('fonts/EurostileBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
