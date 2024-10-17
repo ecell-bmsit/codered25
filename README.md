@@ -17,15 +17,25 @@ A repo for the planning and creation of the CodeRed Website
   - Hero section
   - About section
   - Sponsors section
+  - Prizes section
   - Timeline section
   - Schedule section
   - FAQ section
   - Contact and reachout info
+ 
+- Small details:
+  - favicon/ logo
+  - email list
+  - map
 
-
+## Decitions to make
+- Use external tool for marketing and storing (Unstop or Devfolio)
+- rules of the hackathon (core team) (problem statements or theme, how to submit or what are they expected to submit)
+- Decide on the prizes and swags (discounts, coupons, best of something names)
+- submissions storage and display of projects in website or external
 
 ## List of Refernce websites:
-- [Hacknroll - good timer](https://hacknroll.nushackers.org/)
+- [Hacknroll - good timer](https://hacknroll.nushackers.org/) (
 - [Lahacks - good UI](https://lahacks.com/)
 - [HackMIT - good transition](https://hackmit.org/)
 - [Uncommonhack - nice idea](https://hacks2024.uncommonhacks.com/mobile.html)
