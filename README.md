@@ -32,3 +32,4 @@ A repo for the planning and creation of the CodeRed Website
 - [HackIIITd - good schedule](https://hack-iiitd.github.io/)
 - [DSUdevHack - good schedule](https://dsudevhack.tech/)
 - [nmit hackathon](https://i-solve-final.vercel.app/)
+- [Code Red 2024](https://ecell-bmsit.github.io/codered/)
