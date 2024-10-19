@@ -1,20 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Red Hackathon</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>CODE RED - 24Hr Hackathon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/common.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
 </head>
+<body class="bg-black">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top cyber-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./img/bmslogo.png" alt="BMS Logo" class="nav-logo">
+                <span class="cyber-brand">CODE RED</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tracks">Tracks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#schedule">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prizes">Prizes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cyber-register" href="#register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<body>
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="cyber-grid"></div>
+        <div class="container">
+          <div class="row min-vh-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-12">
+              <div class="title-wrapper">
+                <h1 class="display-1 cyber-main-text" data-baffle>CODE RED </h1>
+                <h2 class="cyber-subtitle">24HR HACKATHON</h2>
+                <p class="cyber-text">Code Till You Drop.</p>
+              </div>
+              <div class="cyber-timer" id="countdown">
+                <div class="time-block">
+                  <span id="days">00</span>
+                  <label>Days</label>
+                </div>
+                <div class="time-block">
+                  <span id="hours">00</span>
+                  <label>Hours</label>
+                </div>
+                <div class="time-block">
+                  <span id="minutes">00</span>
+                  <label>Minutes</label>
+                </div>
+                <div class="time-block">
+                  <span id="seconds">00</span>
+                  <label>Seconds</label>
+                </div>
+              </div>
+              <a href="#register" class="btn cyber-btn">Join The Revolution</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+    <!-- About Section -->
+    <section id="about" class="cyber-section">
+        <div class="container">
+            <h2 class="cyber-section-title">About The Mission</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="cyber-text">Join us for 24 hours of intense coding, innovation, and breakthrough solutions. 
+                    CODE RED is not just a hackathon; it's a revolution in technological advancement.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="cyber-stats">
+                        <div class="stat-item">
+                            <span class="number">24</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">100+</span>
+                            <span class="label">Hackers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">50K</span>
+                            <span class="label">Prize Pool</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="js/script.js"></script>
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./img/bicep.jpeg" alt="BICEP Logo" class="footer-logo">
+                    <h3 class="cyber-footer-title">CODE RED</h3>
+                    <p>Code Till You Drop.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="cyber-footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#tracks">Tracks</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#prizes">Prizes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Connect</h4>
+                    <div class="cyber-social-links">
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Discord</a>
+                        <a href="#" class="social-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baffle.js/0.3.6/baffle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let b = baffle('.cyber-main-text', {
+                characters: '?#$<>/'.split(''),
+                speed: 50
+            });
+        
+            b.start()
+              .reveal(2000, 800);
+    
+            setInterval(() => {
+                b.start()
+                 .reveal(2000, 800);
+            }, 10000);
+        });
+        </script>
+    <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
 </body>
-
 </html>
