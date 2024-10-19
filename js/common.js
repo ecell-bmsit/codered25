@@ -46,6 +46,7 @@ function addGlitchEffect() {
 }
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
     addGlitchEffect();
 });

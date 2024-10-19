@@ -33,7 +33,7 @@
     width: 200%;
     height: 200%;
     background-image: 
-        linear-gradient(transparent 95%, rgba(251, 0, 0, 0.2) 95%),
+        linear-gradient(transparent 95%, rgba(152, 81, 81, 0.2) 95%),
         linear-gradient(90deg, transparent 95%, rgba(251, 0, 0, 0.2) 95%);
     background-size: 50px 50px;
     transform: perspective(1000px) rotateX(60deg);
