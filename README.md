@@ -1,3 +1,18 @@
+## TODO list:
+- [ ] Change the colors of different component and find the perfect combination of red
+- [ ] work on the hero and improve it 
+- [ ] fix navigation and make it smaller and better (improve nav)
+- [ ] change the fonts and decide on the combination of fonts
+- [ ] modify the footer and add (icons, contact number) make it similar to the previous year's footer
+- [ ] complete the about section and add the needed content
+- [ ] add Gallary section with photos from previous year hackathon
+- [ ] 
+
+
+
+
+
+
 # CodeRed-2025-prepare
 A repo for the planning and creation of the CodeRed Website
 
