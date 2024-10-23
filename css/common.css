@@ -784,10 +784,11 @@ body {
 position: relative;
 }
 .imgtext{
+    padding-top: 50px;
     display: flex;
     flex-direction: row;
     gap: 100px;
-
+    
 }
 .new{
     border:  none;
