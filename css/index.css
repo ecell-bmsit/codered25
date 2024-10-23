@@ -129,6 +129,11 @@
     color: var(--cyber-black);
     transform: scale(1.05);
 }
+/* added a small line bw the image and the reasons to match the theme of the website */
+.custom-hr {
+    border: 1.2px solid rgb(255, 55, 0);
+    margin: 70px 0;
+}
 
 @media (max-width: 1200px) {
     .cyber-main-text {
@@ -213,6 +218,10 @@
     .cyber-section-title::after {
         width: 150px;
     }
+    .custom-hr {
+        border: 1.2px solid rgb(255, 55, 0);
+        margin: 0px 0;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -238,6 +247,11 @@
     .new{
         display: none;
     }
+    .custom-hr {
+        border: 1.2px solid rgb(255, 55, 0);
+        margin: 0px 0;
+    }
+    
     
 }
 
