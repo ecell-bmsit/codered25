@@ -43,6 +43,7 @@ A repo for the planning and creation of the CodeRed Website
   - email list
   - map
   - cards for different parts
+  - Traffic Analytics and monitoring (for count and region of visitors, just for fun)
 
 ## Decitions to make
 - Use external tool for marketing and storing (Unstop or Devfolio)
