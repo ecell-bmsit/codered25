@@ -778,7 +778,27 @@ body {
     font-size: 0.9rem;
 }
 
+/*"why participate" section css*/
 
+#participate{
+position: relative;
+}
+.imgtext{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    
+}
+.new{
+    border:  none;
+    border-radius: 20px;
+    width: 600px;
+    height: 600px;
+    }
+    .reasons{
+         width: 100vw;
+    }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
