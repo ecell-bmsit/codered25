@@ -1,4 +1,5 @@
 ## TODO list:
+- [x] General Skeleton of the website (A)
 - [ ] Change the colors of different component and find the perfect combination of red
 - [ ] work on the hero and improve it 
 - [ ] fix navigation and make it smaller and better (improve nav)
