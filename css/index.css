@@ -285,3 +285,60 @@
     white-space: normal;
     width: 100%;
 }
+.scrollimg{
+    border-radius: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 500px;
+    width: 500px;
+    
+}
+
+.marquee {
+    position: relative;
+    width: 100vw;
+    max-width:100%;
+    height: 100vh;
+    overflow-x: hidden;
+    
+  }
+  
+  .track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 32s linear infinite;
+  }
+  
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  
+  .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    
+    width: 100%;
+    margin-top: 6rem;
+    
+    position: relative;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .marquee-content  {
+        animation: marquee 15s linear infinite; /* Slower for smaller screens */
+    }
+    .scrollimg{
+        height: 400px;
+        width: 400px;
+    }
+}
