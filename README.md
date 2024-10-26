@@ -6,7 +6,7 @@
 - [ ] change the fonts and decide on the combination of fonts
 - [ ] modify the footer and add (icons, contact number) make it similar to the previous year's footer
 - [ ] complete the about section and add the needed content
-- [ ] add Gallary section with photos from previous year hackathon
+- [x] add Gallary section with photos from previous year hackathon
 - [x] adding a "Why Participate section", while providing insights to the advantages of attending codered (completed).
 
 
