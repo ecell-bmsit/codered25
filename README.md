@@ -4,7 +4,7 @@
 - [ ] work on the hero and improve it 
 - [ ] fix navigation and make it smaller and better (improve nav)
 - [ ] change the fonts and decide on the combination of fonts
-- [ ] modify the footer and add (icons, contact number) make it similar to the previous year's footer
+- [ ] modify the footer and add (icons, contact number) make it similar to the previous year's footer-milan
 - [ ] complete the about section and add the needed content
 - [x] add Gallary section with photos from previous year hackathon
 - [x] adding a "Why Participate section", while providing insights to the advantages of attending codered (completed).
