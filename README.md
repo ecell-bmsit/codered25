@@ -2,7 +2,7 @@
 - [x] General Skeleton of the website (A)
 - [ ] Change the colors of different component and find the perfect combination of red
 - [ ] work on the hero and improve it 
-- [x] fix navigation and make it smaller and better (improve nav)
+- [ ] fix navigation and make it smaller and better (improve nav) (still to be improved)
 - [ ] change the fonts and decide on the combination of fonts
 - [x] modify the footer and add (icons, contact number) make it similar to the previous year's footer-milan
 - [ ] complete the about section and add the needed content
@@ -46,7 +46,7 @@ A repo for the planning and creation of the CodeRed Website
   - cards for different parts
   - Traffic Analytics and monitoring (for count and region of visitors, just for fun)
 
-## Decitions to make
+## Decisions to make
 - Use external tool for marketing and storing (Unstop or Devfolio)
 - rules of the hackathon (core team) (problem statements or theme, how to submit or what are they expected to submit)
 - Decide on the prizes and swags (discounts, coupons, best of something names)
