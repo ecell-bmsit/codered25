@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'valorant';
+    src: url('./fonts/valorant.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'sd-dystopian';
+    src: url('./fonts/sd-dystopian.otf') format('opentype');
+}

@@ -7,6 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/common.css" rel="stylesheet">
     <link href="./css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/timeline.css">
+    <link rel="stylesheet" href="./css/prize.css">
+    <link rel="icon" href="./img/codered.png">
+    <link rel="stylesheet" href="./css/whyparticipate.css">
+    <link rel="stylesheet" href="./css/faq.css">
+    
 </head>
 <body class="bg-black">
     <!-- Navigation -->
@@ -76,7 +82,7 @@
           </div>
         </div>
       </header>
-      
+      <div id="particles-bg"></div>
     <!-- About Section -->
     <section id="about" class="cyber-section">
         <div class="container">
@@ -106,7 +112,7 @@
         </div>
     </section>
 
-    <section id="sponsor" class="cyber-section">
+    <!-- <section id="sponsor" class="cyber-section">
         <div class="container">
             <h2 class="cyber-section-title">Why Sponsor Us</h2>
             <div class="sponsor-grid">
@@ -139,7 +145,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     
     <!-- Prizes Section -->
     <section id="prizes" class="cyber-section">
@@ -216,8 +222,116 @@
             </div>
         </div>
     </section>
+    <section id="Participate" class="cyber-section">
+        <div class="container">
+            <h2 class="cyber-section-title">Why Participate</h2>
+            <!--img and text-->
+            <div class="imgtext">
+                <img src="./img/codered24.jpg" class="new">
+
+                
+                <hr class="custom-hr">
+                
+                <div class="reasons">
+                    <h3>collabroate and Innovate</h3>
+                    <p>work with diverse group of talented individuals, all passionate 
+                    about making a difference</p>
+
+                    <br>
+
+                    <h3>Showcase you Skills</h3>
+                    <p>This is your opportunity to showcase your skills in Real world 
+                    projects and getting recognized by industry experts</p>
+
+                    <br>
+
+                    <h3>Win Big</h3>
+                    <p>Compete for a chance to win big,cash prizes upto 1Lakh INR</p>
+
+                    <br>
+
+                    <h3>Build Your portfolio</h3>
+                    <p>Create real world Projects for your resume, document your hackathon journey
+                       get certificates of participation and achievement
+                    </p>
+                                       
+                </div>
+
+                </div>
+        </div>
+
+    </section>
+       <!-- Gallery Section -->
+
+       <section id="gallery" class="cyber-section">
+        <div class="container">
+            <h2 class="cyber-section-title">Gallery</h2>
+            <div class="gallery-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="./img/codered.png" alt="Hackathon Moment 1" class="gallery-img">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./img/codered.png" alt="Hackathon Moment 2" class="gallery-img">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./img/codered.png" alt="Hackathon Moment 3" class="gallery-img">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev">←</button>
+                    <button class="carousel-btn next">→</button>
+                </div>
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section id="faq" class="cyber-section">
+        <div class="container">
+            <h2 class="cyber-section-title">FAQ</h2>
+            <div class="faq-grid">
+                <div class="faq-item scroll-reveal">
+                    <div class="faq-question">
+                        <h3>What is CODE RED?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>CODE RED is a 24-hour hackathon where participants work on innovative solutions to real-world problems. It's an opportunity to collaborate, learn, and create something amazing in just one day.</p>
+                    </div>
+                </div>
+                <div class="faq-item scroll-reveal">
+                    <div class="faq-question">
+                        <h3>Who can participate?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Any student currently enrolled in a college or university can participate. Both undergraduate and graduate students are welcome.</p>
+                    </div>
+                </div>
+                <div class="faq-item scroll-reveal">
+                    <div class="faq-question">
+                        <h3>Do I need a team?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Teams can consist of 2-4 members. Don't have a team? No worries! We'll help you find teammates during our team formation event.</p>
+                    </div>
+                </div>
+                <div class="faq-item scroll-reveal">
+                    <div class="faq-question">
+                        <h3>What should I bring?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Bring your laptop, charger, student ID, and enthusiasm! We'll provide food, drinks, and a comfortable hacking space.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
-   
+
     <!-- Footer -->
     <footer class="cyber-footer">
         <div class="container">
@@ -250,6 +364,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baffle.js/0.3.6/baffle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Add GSAP via CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let b = baffle('.cyber-main-text', {
@@ -268,5 +386,6 @@
         </script>
     <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
+    
 </body>
 </html>

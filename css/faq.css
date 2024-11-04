@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'valorant';
+    src: url('./fonts/valorant.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'sd-dystopian';
+    src: url('./fonts/sd-dystopian.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'eurostile';
+    src: url('./fonts/EuroStyleNormal.ttf') format('truetype');
+}
+:root {
+    --cyber-primary: #890408;
+    --cyber-secondary: #FB0000;
+    --cyber-accent: #FF4D4D;
+    --cyber-dark: #1A1A1A;
+    --cyber-light: #FFFFFF;
+    --cyber-gradient: linear-gradient(135deg, var(--cyber-primary), var(--cyber-secondary));
+}
+.faq-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(137, 4, 8, 0.05);
+    border: 1px solid var(--cyber-primary);
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--cyber-light);
+}
+
+.faq-toggle {
+    color: var(--cyber-primary);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    display: none; 
+    padding: 0 1.5rem;
+    background: rgba(137, 4, 8, 0.02);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    padding: 1rem 1.5rem;
+} 
