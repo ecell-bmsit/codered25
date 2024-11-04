@@ -1,0 +1,69 @@
+:root {
+    --cyber-primary: #890408;
+    --cyber-secondary: #FB0000;
+    --cyber-accent: #FF4D4D;
+    --cyber-dark: #1A1A1A;
+    --cyber-light: #FFFFFF;
+    --cyber-gradient: linear-gradient(135deg, var(--cyber-primary), var(--cyber-secondary));
+}
+
+.prize-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.prize-card {
+    background: rgba(251, 0, 0, 0.05);
+    border: 2px solid var(--cyber-red);
+    padding: 2rem;
+    text-align: center;
+    width: 300px;
+    position: relative;
+    transition: all 0.3s ease;
+    clip-path: polygon(0 10px, 10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.prize-card.first {
+    transform: scale(1.1);
+    background: rgba(251, 0, 0, 0.1);
+}
+
+.prize-medal {
+    font-family: 'sd-dystopian', sans-serif;
+    font-size: 2.5rem;
+    color: var(--cyber-red);
+    margin-bottom: 1rem;
+}
+
+.prize-amount {
+    font-family: 'valorant', sans-serif;
+    font-size: 2rem;
+    color: var(--cyber-white);
+    margin-bottom: 1rem;
+}
+
+.prize-details {
+    color: var(--cyber-white);
+    font-family: 'valorant', sans-serif;
+    white-space: pre-line;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    
+    .prize-card.first {
+        transform: scale(1);
+    }
+    
+    .prize-container {
+        flex-direction: column;
+    }
+    
+    .prize-card {
+        width: 100%;
+    }
+}
