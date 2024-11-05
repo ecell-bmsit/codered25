@@ -528,6 +528,8 @@ body {
     letter-spacing: 1px;
 }
 
+/* Footer Styles */
+
 .cyber-footer {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
     border-top: 2px solid var(--cyber-red);
@@ -620,53 +622,19 @@ body {
     transform: translateX(5px);
 }
 
-.cyber-footer-links a:hover::after {
-    width: 100%;
+.cyber-footer-social a:hover,
+.cyber-footer-contact a:hover {
+    color: #FB0000;
+    transition: color 0.3s ease;
 }
 
-.cyber-social-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.social-link {
-    color: var(--cyber-white);
+.cyber-footer-contact a,
+.cyber-footer-social a {
     text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--cyber-red);
-    background: rgba(251, 0, 0, 0.1);
-    min-width: 10px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
 }
 
-.social-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(251, 0, 0, 0.2),
-        transparent
-    );
-    transition: left 0.5s ease;
-}
+/* end of footer */
 
-.social-link:hover {
-    color: var(--cyber-red);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(251, 0, 0, 0.2);
-}
-
-.social-link:hover::before {
-    left: 100%;
-}
 
 .section-border {
     position: relative;
