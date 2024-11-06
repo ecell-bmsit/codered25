@@ -71,7 +71,7 @@ body {
 }
 
 .nav-logo {
-    height: 80px;
+    height: 100px;
     width: auto;
     transition: all 0.3s ease;
 }
@@ -264,7 +264,7 @@ body {
 }
 
 .nav-logo {
-    height: 40px; 
+    height: 50px; 
     width: auto;
     transition: all 0.3s ease;
 }
