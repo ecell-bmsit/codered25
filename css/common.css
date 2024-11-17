@@ -446,7 +446,8 @@ body {
 
 /* Section Styles */
 .cyber-section {
-    padding: 5rem 0;
+   
+    padding-top: var(--navbar-height);
     position: relative;
     margin-top: 2rem;
     overflow: hidden;

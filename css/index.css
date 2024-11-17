@@ -17,6 +17,7 @@
     padding-top: var(--navbar-height);
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
 }
@@ -51,7 +52,7 @@
 .cyber-main-text {
     font-family: 'sd-dystopian', sans-serif;
     color: var(--cyber-red);
-    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-size: clamp(7rem, 9vw, 14rem);
     margin-bottom: 1rem;
     text-transform: uppercase;
     position: relative;
@@ -71,20 +72,19 @@
 .cyber-text {
     font-size: clamp(1rem, 2vw, 1.4rem);
     color: var(--cyber-gray);
-    margin-bottom: 2rem;
     font-family: 'valorant', sans-serif;
 }
 
 .cyber-timer {
     display: flex;
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
     justify-content: center;
 }
 
 .time-block {
-    background: rgba(251, 0, 0, 0.1);
-    border: 2px solid var(--cyber-red);
+    background: rgba(221, 0, 0, 0.05); 
+    border: 1px solid rgba(221, 0, 0, 0.4); 
     padding: 1.5rem;
     text-align: center;
     min-width: 120px;
@@ -94,7 +94,7 @@
 
 .time-block span {
     font-size: 3rem;
-    color: var(--cyber-red);
+    color: rgba(221, 0, 0, 0.7);
     font-family: 'valorant', sans-serif;
 }
 
@@ -126,11 +126,8 @@
     color: var(--cyber-black);
     transform: scale(1.05);
 }
-/* added a small line bw the image and the reasons to match the theme of the website */
-.custom-hr {
-    border: 1.2px solid rgb(255, 55, 0);
-    margin: 70px 0;
-}
+
+
 
 @media (max-width: 1200px) {
     .cyber-main-text {
@@ -180,162 +177,4 @@
     0% { transform: perspective(1000px) rotateX(60deg) translateY(0); }
     100% { transform: perspective(1000px) rotateX(60deg) translateY(100px); }
 }
-@media screen and (max-width: 1024px) {
-    .imgtext {
-        gap: 2rem;
-    }
 
-    .reasons h3 {
-        font-size: 1.3rem;
-    }
-
-    .reasons p {
-        font-size: 0.9rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .cyber-section {
-        padding: 3rem 1rem;
-    }
-
-    .imgtext {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .new {
-        max-width: 100%;
-    }
-
-    .cyber-section-title {
-        font-size: 2rem;
-    }
-
-    .cyber-section-title::after {
-        width: 150px;
-    }
-    .custom-hr {
-        border: 1.2px solid rgb(255, 55, 0);
-        margin: 0px 0;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .cyber-section {
-        padding: 2rem 1rem;
-    }
-
-    .cyber-section-title {
-        font-size: 1.75rem;
-    }
-
-    .reasons h3 {
-        font-size: 1.2rem;
-    }
-
-    .reasons p {
-        font-size: 0.85rem;
-    }
-
-    .cyber-section-title::after {
-        width: 120px;
-    }
-    .new{
-        display: none;
-    }
-    .custom-hr {
-        border: 1.2px solid rgb(255, 55, 0);
-        margin: 0px 0;
-    }
-    
-    
-}
-
-/* Added hover effects for better interactivity */
-.reasons h3 {
-    transition: color 0.3s ease;
-}
-
-.reasons h3:hover {
-    color: #ff0000; /* Same as your theme red color */
-}
-
-/*Added animation for the image */
-.new {
-    transition: transform 0.3s ease;
-}
-
-.new:hover {
-    transform: scale(1.02);
-}
-
-/* just some measures to make sure the new section is responsive */
-
-.reasons {
-    
-    padding: 2rem;
-    width: 100%;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    width: 100%;
-}
-.scrollimg{
-    border-radius: 70px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 500px;
-    width: 500px;
-    
-}
-
-.marquee {
-    position: relative;
-    width: 100vw;
-    max-width:100%;
-    height: 100vh;
-    overflow-x: hidden;
-    
-  }
-  
-  .track {
-    position: absolute;
-    white-space: nowrap;
-    will-change: transform;
-    animation: marquee 32s linear infinite;
-  }
-  
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  
-  .marquee {
-    overflow: hidden;
-    white-space: nowrap;
-    
-    width: 100%;
-    margin-top: 6rem;
-    
-    position: relative;
-}
-
-.marquee-content {
-    display: inline-block;
-    animation: marquee 10s linear infinite;
-}
-
-
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .marquee-content  {
-        animation: marquee 15s linear infinite; /* Slower for smaller screens */
-    }
-    .scrollimg{
-        height: 400px;
-        width: 400px;
-    }
-}

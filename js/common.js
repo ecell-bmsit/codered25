@@ -198,4 +198,3 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
-

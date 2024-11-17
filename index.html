@@ -13,8 +13,11 @@
     <link rel="icon" href="./img/logo.png">
     <link rel="stylesheet" href="./css/whyparticipate.css">
     <link rel="stylesheet" href="./css/faq.css">
+    <link rel="stylesheet" href="./css/gallery.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/57a0898944.js" crossorigin="anonymous"></script>
+    <script src="./js/gallery.js"></script>
 
 
 </head>
@@ -62,6 +65,7 @@
                         <h2 class="cyber-subtitle">25HR HACKATHON</h2>
                         <p class="cyber-text">Code Till You Drop.</p>
                     </div>
+                    <a href="#register" class="btn cyber-btn">Join The Revolution</a>
                     <div class="cyber-timer" id="countdown">
                         <div class="time-block">
                             <span id="days">00</span>
@@ -80,7 +84,7 @@
                             <label>Seconds</label>
                         </div>
                     </div>
-                    <a href="#register" class="btn cyber-btn">Join The Revolution</a>
+                    
                 </div>
             </div>
         </div>
@@ -99,15 +103,15 @@
                 <div class="col-lg-6">
                     <div class="cyber-stats">
                         <div class="stat-item">
-                            <span class="number">24<i class="fa-regular fa-clock"></i></span>
+                            <span class="number">24</span>
                             <span class="label">Hours</span>
                         </div>
                         <div class="stat-item">
-                            <span class="number">100+<i class="fa-solid fa-user"></i></span>
+                            <span class="number">100+</span>
                             <span class="label">Hackers</span>
                         </div>
                         <div class="stat-item">
-                            <span class="number">50K<i class="fa-solid fa-trophy"></i></span>
+                            <span class="number">50K</span>
                             <span class="label">Prize Pool</span>
                         </div>
                     </div>
@@ -228,30 +232,61 @@
     </section>
     <!--gallery section-->
     <section class="cyber-section">
-
         <div class="container">
             <h2 class="cyber-section-title">Gallery</h2>
+            
 
-            <div class="marquee" style="height: 500px;">
-                <div class="track">
-                    <div class="content">&nbsp;
-                        <img src="./img/Codered-23-pictures/IMG_20240114_123909.jpg" alt="" class="scrollimg">
-                        <img src="./img/Codered-23-pictures/IMG_5609.jpg" alt="" class="scrollimg">
-                        <img src="./img/Codered-23-pictures/IMG_5645.jpg" alt="" class="scrollimg">
-                        <img src="./img/Codered-23-pictures/IMG_5680.jpg" alt="" class="scrollimg">
-                        <img src="./img/Codered-23-pictures/IMG_5651.jpg" alt="" class="scrollimg">
-                        <img src="./img/Codered-23-pictures/IMG_5689.jpg" alt="" class="scrollimg">
-                        <img src="./img/Codered-23-pictures/IMG_9833.jpg" alt="" class="scrollimg">
-                        <img src="./img/Codered-23-pictures/IMG_9859.jpg" alt="" class="scrollimg">
-                        <img src="./img/Codered-23-pictures/IMG_9865.jpg" alt="" class="scrollimg">
-                        <img src="./img/Codered-23-pictures/IMG_9868.jpg" alt="" class="scrollimg">
-
-                    </div>
-                </div>
-            </div>
-
+                            <img src="" alt="" class="scrollimg">
+                            <img src="" alt="" class="scrollimg">
+                            <img src="" alt="" class="scrollimg">
+                            <img src="" alt="" class="scrollimg">
+                            <img src="" alt="" class="scrollimg">
+                        
+                            <div class="gallery-container">
+                                <button class="nav-button prev">←</button>
+                                <button class="nav-button next">→</button>
+                                <div class="gallery-track">
+                                    <div class="gallery-item">
+                                        <img src="./img/Codered-23-pictures/IMG_5609.jpg" alt="Gallery image 1">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="./img/Codered-23-pictures/IMG_20240114_123909.jpg" alt="Gallery image 2">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="./img/Codered-23-pictures/IMG_5680.jpg" alt="Gallery image 3">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="./img/Codered-23-pictures/IMG_5645.jpg" alt="Gallery image 4">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="./img/Codered-23-pictures/IMG_5651.jpg" alt="Gallery image 5">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="./img/Codered-23-pictures/IMG_5689.jpg" alt="Gallery image 6">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="./img/Codered-23-pictures/IMG_9833.jpg" alt="Gallery image 7">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="./img/Codered-23-pictures/IMG_9859.jpg " alt="Gallery image 8">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="./img/Codered-23-pictures/IMG_9868.jpg" alt="Gallery image 9">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src= "./img/Codered-23-pictures/IMG_9865.jpg" alt="Gallery image 10">
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="modal">
+                                <span class="close-modal">×</span>
+                                <img src="" alt="Modal image">
+                            </div>
+              
+           
+        </div>
     </section>
-
     <!--Why Participate section-->
     <section id="Participate" class="cyber-section">
         <div class="container">
@@ -292,34 +327,7 @@
         </div>
 
     </section>
-    <!-- Gallery Section -->
 
-    <section id="gallery" class="cyber-section">
-        <div class="container">
-            <h2 class="cyber-section-title">Gallery</h2>
-            <div class="gallery-carousel">
-                <div class="carousel-container">
-                    <div class="carousel-track">
-                        <div class="carousel-slide">
-                            <img src="./img/Codered-23-pictures/IMG_20240114_123909.jpg" alt="Hackathon Moment 1"
-                                class="gallery-img">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./img/Codered-23-pictures/IMG_5609.jpg" alt="Hackathon Moment 2"
-                                class="gallery-img">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./img/Codered-23-pictures/IMG_5680.jpg" alt="Hackathon Moment 3"
-                                class="gallery-img">
-                        </div>
-                    </div>
-                    <button class="carousel-btn prev">←</button>
-                    <button class="carousel-btn next">→</button>
-                </div>
-                <div class="carousel-dots"></div>
-            </div>
-        </div>
-    </section>
     <!-- FAQ Section -->
     <section id="faq" class="cyber-section">
         <div class="container">
@@ -444,8 +452,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baffle.js/0.3.6/baffle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <!-- Add GSAP via CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.6.1/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
