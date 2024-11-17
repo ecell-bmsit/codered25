@@ -1,4 +1,3 @@
-
 :root {
     --cyber-red: #dd0000;
     --cyber-red-transparent: rgba(221, 0, 0, 0.05);
@@ -14,12 +13,21 @@
     background: linear-gradient(135deg, var(--cyber-black) 0%, #120000 50%, var(--cyber-black) 100%);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
-    padding-top: var(--navbar-height);
+    padding-top: max(var(--navbar-height), 5vh);
+    padding-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .cyber-grid {
@@ -28,11 +36,11 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    opacity: 1;
+    opacity: 0.7;
     background-image: 
-     linear-gradient(transparent 97%, rgba(40, 48, 200, 0.34) 97%),
-     linear-gradient(90deg, transparent 97%, rgba(32, 76, 209, 0.463) 97%);
-     background-size: 40px 40px;
+        linear-gradient(transparent 97%, rgba(40, 48, 200, 0.34) 97%),
+        linear-gradient(90deg, transparent 97%, rgba(32, 76, 209, 0.463) 97%);
+    background-size: clamp(20px, 4vw, 40px) clamp(20px, 4vw, 40px);
     transform: perspective(1000px) rotateX(60deg);
     animation: gridAnimation 20s linear infinite;
     pointer-events: none;
@@ -41,130 +49,107 @@
 .title-wrapper {
     position: relative;
     margin: 0 auto;
-    padding: 4rem 1rem;
-    max-width: 1200px;
+    padding: clamp(1.5rem, 3vh, 3rem) 1rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: clamp(0.5rem, 1.5vh, 1.5rem);
 }
 
 .cyber-main-text {
     font-family: 'sd-dystopian', sans-serif;
     color: var(--cyber-red);
-    font-size: clamp(7rem, 9vw, 14rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 8vw, 7rem); 
     text-transform: uppercase;
     position: relative;
-    margin-bottom: 2rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.1em;
     line-height: 1;
+    margin: 0;
+    text-align: center;
+    width: 100%;
 }
 
 .cyber-subtitle {
     font-family: 'valorant', sans-serif;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    margin-bottom: 1rem;
+    font-size: clamp(1rem, 3vw, 2rem); 
     color: var(--cyber-white);
-    letter-spacing: 2px;
+    letter-spacing: 0.1em;
+    margin: 0;
+    text-align: center;
 }
 
 .cyber-text {
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size: clamp(0.875rem, 2vw, 1.2rem);
     color: var(--cyber-gray);
     font-family: 'valorant', sans-serif;
+    margin: 0;
+    text-align: center;
 }
 
 .cyber-timer {
     display: flex;
-    gap: 2rem;
-    margin: 2rem 0;
     justify-content: center;
+    gap: clamp(0.5rem, 2vw, 1.5rem);
+    margin: clamp(1rem, 2vh, 1.5rem) 0;
+    width: 100%;
+    padding: 0 1rem;
+    flex-wrap: wrap;
 }
 
 .time-block {
-    background: rgba(221, 0, 0, 0.05); 
-    border: 1px solid rgba(221, 0, 0, 0.4); 
-    padding: 1.5rem;
+    background: var(--cyber-red-transparent);
+    border: 1px solid rgba(221, 0, 0, 0.4);
+    padding: clamp(0.75rem, 2vw, 1.25rem);
     text-align: center;
-    min-width: 120px;
     position: relative;
     overflow: hidden;
+    min-width: clamp(80px, 15vw, 100px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
 }
 
 .time-block span {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
     color: rgba(221, 0, 0, 0.7);
     font-family: 'valorant', sans-serif;
+    line-height: 1;
 }
 
 .time-block label {
     display: block;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.875rem);
     color: var(--cyber-white);
-    margin-top: 0.5rem;
     font-family: 'valorant', monospace;
+    margin: 0;
 }
 
 .cyber-btn {
     background: transparent;
     border: 2px solid var(--cyber-red);
     color: var(--cyber-red);
-    padding: 0.8rem 2rem;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.75rem);
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: 'valorant', sans-serif;
-    font-size: 1.2rem;
+    font-size: clamp(0.875rem, 2vw, 1.1rem);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: clamp(1rem, 2vh, 1.5rem);
 }
 
 .cyber-btn:hover {
     background: var(--cyber-red);
     color: var(--cyber-black);
     transform: scale(1.05);
-}
-
-
-
-@media (max-width: 1200px) {
-    .cyber-main-text {
-        font-size: 5.5rem;
-    }
-    
-    .cyber-subtitle {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .cyber-main-text {
-        font-size: 3.5rem;
-    }
-    
-    .cyber-subtitle {
-        font-size: 2rem;
-    }
-    
-    .cyber-text {
-        font-size: 1.2rem;
-    }
-    
-    .cyber-timer {
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    
-    .time-block {
-        min-width: 100px;
-        padding: 1rem;
-    }
-    
-    .time-block span {
-        font-size: 2.5rem;
-    }
 }
 
 @keyframes gradientBG {
@@ -178,3 +163,21 @@
     100% { transform: perspective(1000px) rotateX(60deg) translateY(100px); }
 }
 
+@media (max-width: 480px) {
+    .cyber-timer {
+        gap: 0.5rem;
+    }
+    
+    .time-block {
+        min-width: 70px;
+        padding: 0.5rem;
+    }
+    
+    .time-block span {
+        font-size: 1.25rem;
+    }
+    
+    .time-block label {
+        font-size: 0.65rem;
+    }
+}

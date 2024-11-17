@@ -23,16 +23,6 @@ const countdown = setInterval(function() {
     }
 }, 1000);
 
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.cyber-nav');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-        navbar.style.boxShadow = '0 2px 10px rgba(251, 0, 0, 0.3)';
-    } else {
-        navbar.style.background = 'rgba(0, 0, 0, 0.9)';
-        navbar.style.boxShadow = 'none';
-    }
-});
 
 
 document.querySelectorAll('.cyber-btn').forEach(button => {
