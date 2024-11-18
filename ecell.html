@@ -11,14 +11,14 @@
 <body>
     <div class="topbar">
         <div class="nav-buttons">
-            <button class="back-btn">
+            <button class="back-btn" aria-label="Go back">
                 <i class="fas fa-arrow-left"></i>
+                <span class="back-text">Back</span>
             </button>
-          
         </div>
         <div class="logos">
-            <div class="logo-placeholder" id="l1"></div>
-            <div class="logo-placeholder" id="l2"></div>
+            <a href="#" class="logo-placeholder" id="l1" aria-label="BMS Logo"></a>
+            <a href="#" class="logo-placeholder" id="l2" aria-label="E-Cell Logo"></a>
         </div>
     </div>
 
@@ -69,14 +69,24 @@
     
 
     <footer class="footer">
-        <p class="message">
-            "Entrepreneurship is living a few years of your life like most people won't, so that you can spend the rest of your life like most people can't."
-        </p>
-        <div class="footer-socials">
-            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <div class="footer-content">
+            <p class="message">
+                Entrepreneurship is living a few years of your life like most people won't, so that you can spend the rest of your life like most people can't.
+            </p>
+            <div class="footer-socials">
+                <a href="#" class="social-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
@@ -276,9 +286,10 @@ initializeTabs();
 resetAutoRotate();
       
        
-        document.querySelector('.back-btn').addEventListener('click', () => {
-            window.history.back();
-        });
+document.querySelector('.back-btn').addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
+
     </script>
 </body>
 </html>
