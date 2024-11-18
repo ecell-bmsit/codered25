@@ -72,13 +72,15 @@ body {
 
 /* Section Styles */
 .cyber-section {
-   
     padding-top: var(--navbar-height);
     position: relative;
     margin-top: 2rem;
     overflow: hidden;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
+/* Keeping existing background effect */
 .cyber-section::before {
     content: '';
     position: absolute;
@@ -96,7 +98,7 @@ body {
 .cyber-section-title {
     font-family: 'sd-dystopian', sans-serif;
     color: var(--cyber-red);
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     margin-bottom: 2rem;
     position: relative;
     display: inline-block;
@@ -116,17 +118,21 @@ body {
 
 .cyber-stats {
     display: flex;
-    gap: 2rem;
-    margin: 0;
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: center;
+    padding: 1rem 0;
 }
 
+/* Responsive stat items */
 .stat-item {
     background: rgba(251, 0, 0, 0.1);
     border: 2px solid var(--cyber-red);
-    padding: 1.5rem;
+    padding: 1.25rem;
     text-align: center;
-    min-width: 120px;
+    flex: 1;
+    min-width: min(120px, calc(33% - 1rem));
+    max-width: 200px;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -138,7 +144,7 @@ body {
 }
 
 .stat-item .number {
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 3rem);
     color: var(--cyber-red);
     font-family: 'valorant', sans-serif;
     display: block;
@@ -148,11 +154,112 @@ body {
 .stat-item .label {
     display: block;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
     color: var(--cyber-white);
     margin-top: 0.5rem;
     font-family: 'valorant', monospace;
     letter-spacing: 1px;
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .col-lg-6 {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .cyber-text {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    .cyber-stats {
+        gap: 0.75rem;
+    }
+
+    .stat-item {
+        padding: 1rem;
+        min-width: calc(50% - 0.75rem);
+    }
+}.cyber-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+/* Responsive stat items */
+.stat-item {
+    background: rgba(251, 0, 0, 0.1);
+    border: 2px solid var(--cyber-red);
+    padding: 1.25rem;
+    text-align: center;
+    flex: 1;
+    min-width: min(120px, calc(33% - 1rem));
+    max-width: 200px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(251, 0, 0, 0.3);
+}
+
+.stat-item .number {
+    font-size: clamp(2rem, 6vw, 3rem);
+    color: var(--cyber-red);
+    font-family: 'valorant', sans-serif;
+    display: block;
+    text-shadow: 0 0 10px rgba(251, 0, 0, 0.3);
+}
+
+.stat-item .label {
+    display: block;
+    text-transform: uppercase;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    color: var(--cyber-white);
+    margin-top: 0.5rem;
+    font-family: 'valorant', monospace;
+    letter-spacing: 1px;
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .col-lg-6 {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .cyber-text {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    .cyber-stats {
+        gap: 0.75rem;
+    }
+
+    .stat-item {
+        padding: 1rem;
+        min-width: calc(50% - 0.75rem);
+    }
 }
 
 /* Footer Styles */
