@@ -6,273 +6,7 @@
     <title>E-Cell BMSITM</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <style>
-    
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        body {
-            --primary: #0984e3;
-            --text: #333;
-            --card-bg: white;
-            --bg: #f9fafb;
-            color: var(--text);
-            background: var(--bg);
-        }
-
-        .topbar {
-            padding: 1rem;
-            background: #0984e3;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-        }
-
-        .back-btn {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: white;
-        }
-
-        .logos {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .logo-placeholder {
-            width: 40px;
-            height: 40px;
-            
-            border-radius: 50%;
-        }
-        #l1{
-            background: url('./img/bmslogo.png');
-            background-size: cover;
-        }
-        #l2{
-            background: url('./img/ecell_logo.png');
-            background-size: cover;
-        }
-
-
-        .hero {
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            background: url('./img/low-poly-grid-haikei.png');
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .iso-text {
-        font-weight: 600;
-        font-size: 14em;
-        transform: rotateX(30deg) rotateZ(-5deg);
-       }
-
-       .iso-text .letter {
-       display: inline-block;
-       line-height: 1em;
-       }
-        
-       
-        .subheading {
-            font-size: 4.5rem;
-            margin: 1rem 0;
-        }
-
-        .tagline {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .tabs {
-            padding: 5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            min-height: 100vh;
-        }
-         .team-heading {
-            font-size: 2.5em;
-            margin-bottom: 2rem;
-            text-align: center;
-            
-         }
-        .tab-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            justify-content: center;
-            overflow-x: auto;
-            padding-bottom: 1rem;
-        }
-
-        .tab-btn {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            background: #f3f4f6;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-
-        .tab-btn.active {
-            background: #3b82f6;
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 0.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .tab-content.active {
-            display: grid;
-        }
-
-        .member-card {
-            background: var(--card-bg);
-            border-radius: 1rem;
-            padding: 1rem;
-            text-align: center;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .member-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 1rem;
-            background: #e5e7eb;
-        }
-
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .member-info {
-            text-align: center;
-        }
-
-        .member-name {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-
-        .member-position {
-            color: var(--primary);
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .social-link {
-            color: var(--primary);
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: transform 0.3s;
-            border: 1px solid var(--primary);
-        }
-
-        .social-link:hover {
-            transform: scale(1.1);
-            background: var(--primary);
-            color: var(--card-bg);
-        }  
-        
-
-        .mission {
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            background:#0984e3 ;
-            flex-direction: column;
-            min-height: 100vh;
-            color: white;
-            padding: 2em;
-        }
-
-        .m{
-            padding: 2rem;
-            background: white;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            width: 90%;
-            height: auto;
-            flex-direction: column;
-            color: #333;
-            clip-path: polygon(0 5%, 5% 5%, 5% 0, 95% 0, 95% 5%, 100% 5%, 100% 95%, 95% 95%, 95% 100%, 5% 100%, 5% 95%, 0 95%);
-        }
-        
-        .mission-head{
-            font-size: 2.5em;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .footer {
-            background: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .message {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
-        }
-
-        .footer-socials {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-     
-    </style>
+    <link rel="stylesheet" href="./css/ecell.css">
 </head>
 <body>
     <div class="topbar">
@@ -291,7 +25,7 @@
     <section class="hero">
         <h1 class="iso-text">e-Cell</h1>
 
-        <h2 class="subheading">BMSITM</h2>
+        <h2 class="subheading">BMSIT&M</h2>
         <p class="tagline">Innovate. Incubate. Inspire.</p>
     </section>
 
@@ -469,70 +203,77 @@ anime.timeline({loop: false})
                 
             ]
         };
-
         const tabButtons = document.querySelector('.tab-buttons');
-        const tabContents = document.querySelector('#tab-contents');
-        let currentTab = 0;
+const tabContents = document.querySelector('#tab-contents');
+let currentTab = 0;
+let autoRotateTimeout;
 
-       
-        function createMemberCard(member) {
-            return `
-                <div class="member-card">
-                    <div class="avatar">
-                        <img src="${member.img}" alt="${member.name}">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">${member.name}</h3>
-                        <p class="member-position">${member.position}</p>
-                        <div class="social-links">
-                            <a href="${member.linkedin}" class="social-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
+function createMemberCard(member) {
+    return `
+        <div class="member-card">
+            <div class="avatar">
+                <img src="${member.img}" alt="${member.name}">
+            </div>
+            <div class="member-info">
+                <h3 class="member-name">${member.name}</h3>
+                <p class="member-position">${member.position}</p>
+                <div class="social-links">
+                    <a href="${member.linkedin}" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
-            `;
-        }
+            </div>
+        </div>
+    `;
+}
 
-        function initializeTabs() {
-           
-            Object.keys(teamData).forEach((teamName, index) => {
-                const button = document.createElement('button');
-                button.className = `tab-btn ${index === 0 ? 'active' : ''}`;
-                button.textContent = teamName;
-                button.onclick = () => switchTab(index);
-                tabButtons.appendChild(button);
+function initializeTabs() {
+    Object.keys(teamData).forEach((teamName, index) => {
+        const button = document.createElement('button');
+        button.className = `tab-btn ${index === 0 ? 'active' : ''}`;
+        button.textContent = teamName;
+        button.onclick = () => {
+            switchTab(index);
+            resetAutoRotate();
+        };
+        tabButtons.appendChild(button);
+        
+        const content = document.createElement('div');
+        content.className = `tab-content ${index === 0 ? 'active' : ''}`;
+        content.innerHTML = teamData[teamName].map(member => createMemberCard(member)).join('');
+        tabContents.appendChild(content);
+    });
+}
 
-            
-                const content = document.createElement('div');
-                content.className = `tab-content ${index === 0 ? 'active' : ''}`;
-                content.innerHTML = teamData[teamName].map(member => createMemberCard(member)).join('');
-                tabContents.appendChild(content);
-            });
-        }
-
-      
-        function switchTab(index) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            
-            document.querySelectorAll('.tab-btn')[index].classList.add('active');
-            document.querySelectorAll('.tab-content')[index].classList.add('active');
-            
-            currentTab = index;
-        }
-
-        function startAutoRotate() {
-            setInterval(() => {
-                currentTab = (currentTab + 1) % Object.keys(teamData).length;
-                switchTab(currentTab);
-            }, 15000);
-        }
-
+function switchTab(index) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
     
-        initializeTabs();
-        startAutoRotate();
+    document.querySelectorAll('.tab-btn')[index].classList.add('active');
+    document.querySelectorAll('.tab-content')[index].classList.add('active');
+    
+    currentTab = index;
+    
+    const activeButton = document.querySelectorAll('.tab-btn')[index];
+    activeButton.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+}
 
+function resetAutoRotate() {
+
+    if (autoRotateTimeout) {
+        clearTimeout(autoRotateTimeout);
+    }
+    
+  
+    autoRotateTimeout = setTimeout(() => {
+        const nextTab = (currentTab + 1) % Object.keys(teamData).length;
+        switchTab(nextTab);
+        resetAutoRotate(); 
+    }, 15000);
+}
+
+initializeTabs();
+resetAutoRotate();
       
        
         document.querySelector('.back-btn').addEventListener('click', () => {
