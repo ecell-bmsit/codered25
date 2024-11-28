@@ -217,3 +217,109 @@ body.modal-open {
 
 
 
+@media (max-width: 768px) {
+    .problem-card {
+        clip-path: none;
+        border-radius: 8px;
+        padding: 1.2rem;
+        position: relative;
+        background: linear-gradient(
+            to bottom right, 
+            rgba(18, 18, 40, 0.95), 
+            rgba(30, 30, 60, 0.95)
+        );
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, border 0.3s ease;
+    }
+
+    .problem-card:hover {
+        transform: translateY(-5px);
+        border: 2px solid var(--neon-pink);
+    }
+
+    /* Cyberpunk Corner Borders */
+    .problem-card::before, 
+    .problem-card::after {
+        content: '';
+        position: absolute;
+        width: 20%;
+        height: 2px;
+        background: var(--neon-blue);
+        transition: all 0.3s ease;
+    }
+
+    .problem-card::before {
+        top: 0;
+        left: 0;
+    }
+
+    .problem-card::after {
+        bottom: 0;
+        right: 0;
+        transform: rotate(180deg);
+    }
+
+    .problem-card:hover::before, 
+    .problem-card:hover::after {
+        width: 40%;
+    }
+
+    .problem-card h2 {
+        font-size: 1.2rem;
+        color: var(--neon-blue);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    .problem-card p {
+        font-size: 0.85rem;
+        color: #b0b0c0;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .problem-card {
+        padding: 1rem;
+    }
+
+    .problem-card h2 {
+        font-size: 1rem;
+    }
+
+    .problem-card p {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .hologram-modal {
+        width: 95%;
+        padding: 1.5rem;
+        max-width: 400px;
+        max-height: 80vh;
+        font-size: 0.9rem;
+    }
+
+    .hologram-modal .return-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .hologram-modal::before {
+        animation: scan 4s linear infinite; 
+    }
+}
+
+@media (max-width: 480px) {
+    .hologram-modal {
+        padding: 1rem;
+    }
+
+    .hologram-modal .return-btn {
+        font-size: 0.8rem;
+    }
+}
