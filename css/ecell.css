@@ -1,14 +1,15 @@
 :root {
-    --primary: #2a2a2a;
-    --secondary: #404040;
-    --accent: #cc0000;
-    --accent-glow: rgba(204, 0, 0, 0.5);
+    --primary: #1a1a1a;
+    --secondary: #2d2d2d;
+    --accent: #ff4d00;
+    --accent-secondary: #ff8533;
+    --accent-glow: rgba(255, 77, 0, 0.5);
     --text-primary: #ffffff;
-    --text-secondary: #e0e0e0;
-    --card-bg: #333333;
-    --card-border: #fc6666;
-    --gradient-start: rgba(204, 0, 0, 0.15);
-    --gradient-end: rgba(51, 51, 51, 0.95);
+    --text-secondary: #f0f0f0;
+    --card-bg: #2d2d2d;
+    --card-border: #ff6b33;
+    --gradient-start: rgba(255, 77, 0, 0.15);
+    --gradient-end: rgba(26, 26, 26, 0.95);
 }
 
 @font-face {
@@ -37,16 +38,16 @@
             color: var(--text-primary);
         }
         .topbar {
-            background: rgba(64, 64, 64, 0.85); /* Using --secondary with opacity */
-            border-bottom: 2px solid var(--accent);
-            box-shadow: 0 2px 10px var(--accent-glow),
-                        0 0 20px rgba(204, 0, 0, 0.2);
+            background: rgba(45, 45, 45, 0.85);
+           border-bottom: 2px solid var(--accent);
+          box-shadow: 0 2px 15px var(--accent-glow),
+                0 0 30px rgba(255, 77, 0, 0.2);
+             backdrop-filter: blur(12px);
             padding: 1rem 2rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -83,12 +84,14 @@
         }
         
         .back-btn {
-            background: none;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
             border: 1px solid var(--accent);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--text-primary);
-            transition: all 0.3s;
             padding: 0.5rem 1rem;
             border-radius: 4px;
             display: flex;
@@ -112,9 +115,9 @@
         
         .back-btn:hover {
             color: var(--text-primary);
-            text-shadow: 0 0 10px var(--accent-glow);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px var(--accent-glow);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 20px var(--accent-glow);
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
         }
         
         .back-btn:hover::before {
