@@ -74,7 +74,7 @@ nav {
     position: relative;
     overflow: hidden;
     transform-style: preserve-3d;
-    transform: rotateX(10deg) rotateY(15deg);
+    transform: rotateX(3deg) rotateY(6deg);
     box-shadow: 
         0 10px 20px rgba(0,0,0,0.4),
         0 0 20px var(--neon-blue);
@@ -243,7 +243,7 @@ body.modal-open {
         border: 2px solid var(--neon-pink);
     }
 
-    /* Cyberpunk Corner Borders */
+   
     .problem-card::before, 
     .problem-card::after {
         content: '';
