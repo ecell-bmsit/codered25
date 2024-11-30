@@ -63,9 +63,12 @@
 }
 
 .nav-logo {
-    height: 50px; 
+    height: 60px; 
     width: auto;
+    max-width: 150px; /* Prevent logos from becoming too wide */
+    object-fit: contain; /* Maintain aspect ratio */
     transition: all 0.3s ease;
+    margin: 0 10px;
 }
 
 .cyber-brand {
@@ -141,7 +144,8 @@
     }
 
     .nav-logo {
-        height: 30px; 
+        height: 50px; 
+        max-width: 120px;
     }
 
     .navbar-brand {
@@ -191,9 +195,6 @@
         padding: 0 0.3rem; 
     }
 
-    .nav-logo {
-        height: 25px; 
-    }
 
     .cyber-brand {
         font-size: 1.4rem;
