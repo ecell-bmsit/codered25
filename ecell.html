@@ -381,13 +381,13 @@
             const card = document.createElement('div');
             card.className = 'volunteer-card';
 
-            // Create image with lazy loading
+           
             const image = document.createElement('img');
             image.className = 'volunteer-image lazy-load';
             image.dataset.src = volunteer.image;
             image.alt = volunteer.name;
 
-            // Name and position
+          
             const name = document.createElement('div');
             name.className = 'volunteer-name';
             name.textContent = volunteer.name;
@@ -396,7 +396,6 @@
             position.className = 'volunteer-position';
             position.textContent = volunteer.position;
 
-            // Social icons
             const socialIcons = document.createElement('div');
             socialIcons.className = 'social-icons';
 
@@ -422,7 +421,6 @@
                 }
             });
 
-            // Append elements
             card.appendChild(image);
             card.appendChild(name);
             card.appendChild(position);
@@ -431,7 +429,7 @@
             return card;
         }
 
-        // Render volunteers
+  
         const volunteerContainer = document.getElementById('volunteer-container');
         const fragment = document.createDocumentFragment();
 
@@ -442,7 +440,7 @@
 
         volunteerContainer.appendChild(fragment);
 
-        // Initialize lazy loading after volunteers are added
+       
         initializeLazyLoading();
     </script>
 </body>
