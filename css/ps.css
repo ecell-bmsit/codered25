@@ -57,8 +57,8 @@ nav {
 
 
 .problem-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     perspective: 1000px;
     padding-bottom: 1.6rem;
@@ -75,7 +75,7 @@ nav {
     position: relative;
     overflow: hidden;
     transform-style: preserve-3d;
-    transform: rotateX(2.8deg) rotateY(5.5deg);
+    
     box-shadow: 
         0 10px 20px rgba(0,0,0,0.4),
         0 0 20px var(--neon-blue);
@@ -115,7 +115,7 @@ nav {
 
 .problem-card p {
     color: #b0b0c0;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 
@@ -230,7 +230,7 @@ body.modal-open {
         border-radius: 8px;
         padding: 1.2rem;
         position: relative;
-        transform: rotateX(2.1deg) rotateY(5deg);
+        
         background: linear-gradient(
             to bottom right, 
             rgba(18, 18, 40, 0.95), 
@@ -291,7 +291,7 @@ body.modal-open {
     .problem-card {
         padding: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1.3fr));
-        transform: rotateX(1.8deg) rotateY(4deg);
+        
     }
 
     
