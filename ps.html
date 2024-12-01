@@ -31,10 +31,17 @@
             <a class="navbar-brand" href="index.html">
                 <i class="fas fa-arrow-left"> </i>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <input type="checkbox" name="toggle-menu" id="toggle-menu">
+                <label for="toggle-menu" type="button" class="toggle-btn">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </label>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+               
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="ecell.html">About us</a>
@@ -56,6 +63,35 @@
                 </ul>
             </div>
         </div>
+        <script>
+            const navbarCollapse = document.getElementById('navbarNav');
+       const body = document.body;
+       const toggleMenu = document.getElementById('toggle-menu');
+   
+   
+       navbarCollapse.addEventListener('show.bs.collapse', () => {
+           body.classList.add('blur-active');
+       });
+   
+   
+       navbarCollapse.addEventListener('hidden.bs.collapse', () => {
+           body.classList.remove('blur-active');
+       });
+   
+       document.addEventListener('click', (event) => {
+           const isClickInside = navbarCollapse.contains(event.target) || 
+                                 event.target.matches('.navbar-toggler, .nav-link');
+   
+           if (!isClickInside) {
+               const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+               if (bsCollapse && navbarCollapse.classList.contains('show')) {
+                   bsCollapse.hide();
+                   body.classList.remove('blur-active');
+                   toggleMenu.checked = false; 
+               }
+           }
+       });
+           </script>
     </nav>
     <div id="particles-bg"></div>
     <section id="about" class="cyber-section">
@@ -106,37 +142,26 @@
                             democratic processes.</p>
                     </div>
 
-                    <div class="problem-card">
+            <div class="problem-card">
+                <h2>Smart Inventory Management</h2>
+                <p>Develop an IoT-based system to monitor and manage inventory levels in real-time, reducing waste and optimizing stock levels.</p>
+            </div>
 
-                        <h2>Network Intrusion Detection</h2>
-                        <p>Design an AI-powered system to detect and prevent network security breaches in real-time
-                            using machine learning algorithms.</p>
-                    </div>
+            <div class="problem-card">
+                <h2>Predictive Maintenance for Transport Fleets</h2>
+                <p>Create a predictive maintenance system for transportation fleets using IoT sensors and machine learning to minimize downtime and reduce costs.</p>
+            </div>
 
+            <div class="problem-card">
+                <h2>Healthcare Data Analytics</h2>
+                <p>Design a data analytics platform for healthcare providers to analyze patient data and improve treatment outcomes using predictive analytics.</p>
+            </div>
 
-
-                    <div class="problem-card">
-
-                        <h2>Network Intrusion Detection</h2>
-                        <p>Design an AI-powered system to detect and prevent network security breaches in real-time
-                            using machine learning algorithms.</p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Urban Mobility Optimizer</h2>
-                        <p>Create an intelligent transportation management system that reduces traffic congestion and
-                            optimizes route planning using predictive analytics.</p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Urban Mobility Optimizer</h2>
-                        <p>Create an intelligent transportation management system that reduces traffic congestion and
-                            optimizes route planning using predictive analytics.</p>
-                    </div>
-
-
+            <div class="problem-card">
+                <h2>IoT-enabled Smart City Solutions</h2>
+                <p>Build an IoT-based platform to enhance urban living by integrating smart lighting, waste management, and traffic monitoring systems.</p>
+            </div>
+        
                 </div>
             </div>
         </div>
@@ -238,3 +263,64 @@
 </body>
 
 </html>
+const problemStatements = {
+    'Native Multilingual RAG System for PDF files': {
+        description: `Translating books and extensive documents from one language to another is traditionally a time consuming and resource-intensive task. With advancements in Generative AI (GenAI) and Retrieval-Augmented Generation (RAG) systems, there's an opportunity to streamline this 
+                    process and make it more accessible to non-technical users. The main goal is to develop 
+                    a solution that simplifies the translation of PDF files into different languages using 
+                    a RAG pipeline. This solution should accept PDF files, extract text, tables, and images,
+                    convert them into chunks, and translate the extracted content into a selected language.
+                    The translated chunks should then be stored in a vector database optimized for RAG systems.
+                    This will enable RAG systems to function seamlessly in the chosen language without 
+                    requiring any technical expertise. Create a user-friendly application that can be 
+                    easily used by individuals with non-technical backgrounds, such as staff at 
+                    translation agencies or organizations needing content translated into local 
+                    languages`
+    },
+
+    'Urban Mobility Optimizer': {
+        description: `In today's digital landscape, managing extensive collections of digital 
+                            books poses significant challenges. Traditional library systems primarily 
+                            focus on storing and organizing PDFs without providing deep content 
+                            accessibility. The main objective is to develop a library management 
+                            system that not only saves and organizes PDF books but also automatically 
+                            processes each new addition through a pipeline that extracts content and 
+                            creates a comprehensive index. This index should be stored in a vector 
+                            database, enabling advanced search capabilities within the book's content. 
+                            The solution will leverage different databases optimized for specific tasks 
+                            while retaining the simplicity and user-friendliness of a conventional library 
+                            management system. By natively integrating content extraction and indexing, 
+                            users can perform efficient and in-depth searches across the entire library 
+                            collection. Create a web application that combines traditional library 
+                            management features with the power of vector databases and native indexing 
+                            to enhance information retrieval and user experience.`
+    }
+    
+};
+
+function openProblemModal(title) {
+const modal = document.getElementById('problemModal');
+const problem = problemStatements[title];
+
+document.getElementById('modalTitle').textContent = title;
+document.getElementById('modalDescription').textContent = problem.description;
+
+
+
+modal.classList.add('show');
+setTimeout(() => modal.style.opacity = '1', 10);
+}
+
+function closeProblemModal() {
+    const modal = document.getElementById('problemModal');
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+}
+
+
+document.querySelectorAll('.problem-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const title = card.querySelector('h2').textContent.trim(); 
+        openProblemModal(title);
+    });
+});
