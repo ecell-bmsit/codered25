@@ -170,7 +170,8 @@ nav {
 
         @media (max-width: 480px) {
             .volunteer-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
 
             .volunteers-title {
