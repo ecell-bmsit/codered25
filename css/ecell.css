@@ -160,22 +160,23 @@ nav {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
         @media (max-width: 768px) {
             .volunteer-container {
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 1.2rem; 
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
-           
         }
-        
+
         @media (max-width: 480px) {
             .volunteer-container {
-                grid-template-columns: 1fr; 
-                
+                grid-template-columns: 1fr;
             }
-          
+
+            .volunteers-title {
+                font-size: 2rem;
+            }
         }
-        
 
     
         .lazy-load {
