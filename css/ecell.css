@@ -192,26 +192,7 @@ nav {
                 grid-template-columns: 1fr; 
                 
             }
-            .volunteer-card {
-                padding: 0.8rem;
-                height: 250px; 
-            }
-            .volunteer-image {
-                width: 90px; 
-                height: 90px;
-            }
-            .volunteer-name {
-                font-size: 0.9rem; 
-                max-width: 120px;
-            }
-            .volunteer-position {
-                font-size: 0.8rem; 
-                max-width: 200px;
-            }
-            .social-icon {
-                width: 25px; 
-                height: 25px;
-            }
+          
         }
         
 
