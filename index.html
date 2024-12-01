@@ -66,16 +66,33 @@
             </div>
         </div>
         <script>
-            const navbarCollapse = document.getElementById('navbarNav');
-            const body = document.body;
-        
-            navbarCollapse.addEventListener('show.bs.collapse', () => {
-                body.classList.add('blur-active');
-            });
-        
-            navbarCollapse.addEventListener('hidden.bs.collapse', () => {
+         const navbarCollapse = document.getElementById('navbarNav');
+    const body = document.body;
+    const toggleMenu = document.getElementById('toggle-menu');
+
+
+    navbarCollapse.addEventListener('show.bs.collapse', () => {
+        body.classList.add('blur-active');
+    });
+
+
+    navbarCollapse.addEventListener('hidden.bs.collapse', () => {
+        body.classList.remove('blur-active');
+    });
+
+    document.addEventListener('click', (event) => {
+        const isClickInside = navbarCollapse.contains(event.target) || 
+                              event.target.matches('.navbar-toggler, .nav-link');
+
+        if (!isClickInside) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse && navbarCollapse.classList.contains('show')) {
+                bsCollapse.hide();
                 body.classList.remove('blur-active');
-            });
+                toggleMenu.checked = false; 
+            }
+        }
+    });
         </script>
     </nav>
 

@@ -215,7 +215,7 @@ body.blur-active > :not(.navbar){
     }
 
     .nav-link {
-        padding: 0.3rem 0; 
+        padding: 0.5rem 0; 
         font-size: 1.5rem; 
         text-align: center;
         border-bottom: 1px solid rgba(251, 0, 0, 0.2);
