@@ -189,7 +189,7 @@ nav {
         
         @media (max-width: 480px) {
             .volunteer-container {
-                grid-template-columns: 1; 
+                grid-template-columns: 1fr; 
                 
             }
             .volunteer-card {
