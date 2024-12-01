@@ -13,6 +13,10 @@
     src: url('./fonts/EuroStyleNormal.ttf') format('truetype');
 }
 
+body.blur-active > :not(.navbar){
+    filter: blur(8px); /* Blurs the content */
+    transition: filter 0.3s ease; /* Smooth transition for the blur */
+}
 :root {
     --cyber-primary: #890408;
     --cyber-secondary: #FB0000;
@@ -154,16 +158,56 @@
     }
 
     .navbar-toggler {
-        border: 2px solid var(--cyber-red);
-        padding: 0.2rem 0.4rem; 
+        border:none !important;
+        outline:none !important;
+        box-shadow: none !important;
+    }
+
+    .navbar .toggle-btn{
+        cursor:pointer;
+        position:relative;
+        top:5px;
+        z-index:1100;
+    }
+
+    .navbar .toggle-btn .bar{
+        width:25px;
+        height:3px;
+        margin:7px 0 7px auto;
+        transition: all .2s ease-in-out;
+        background-color:#dd0000;
+    }
+
+    .navbar .toggle-btn .bar:nth-child(2){
+        width:35px;
+    }
+    .navbar #toggle-menu{
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        z-index: -1;
+    }
+    .navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(2){
+        transform:translateX(50px);
+        opacity:0;
+    }
+    .navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(1){
+        transform:translateY(12px) rotate(45deg);
+    
+    }
+    .navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(3){
+        transform:translateY(-8px) rotate(-45deg);
+    
     }
 
     .navbar-collapse {
-        background: rgba(0, 0, 0, 0.95);
+        background: transparent;
         padding: 0.3rem; 
         border: 1px solid var(--cyber-red);
         border-radius: 4px;
-        margin-top: 0.3rem; 
+        margin-top: 0.3rem;
+           
     }
 
     .navbar-nav {
@@ -172,7 +216,7 @@
 
     .nav-link {
         padding: 0.3rem 0; 
-        font-size: 0.9rem; 
+        font-size: 1.5rem; 
         text-align: center;
         border-bottom: 1px solid rgba(251, 0, 0, 0.2);
     }
