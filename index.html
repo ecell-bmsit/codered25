@@ -33,9 +33,15 @@
                 <img src="./img/logo.png" alt="CodeRed Logo" class="nav-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <input type="checkbox" name="toggle-menu" id="toggle-menu">
+                <label for="toggle-menu" type="button" class="toggle-btn">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </label>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="ecell.html">Teams</a>
@@ -55,8 +61,21 @@
                     
 
                 </ul>
+                
             </div>
         </div>
+        <script>
+            const navbarCollapse = document.getElementById('navbarNav');
+            const body = document.body;
+        
+            navbarCollapse.addEventListener('show.bs.collapse', () => {
+                body.classList.add('blur-active');
+            });
+        
+            navbarCollapse.addEventListener('hidden.bs.collapse', () => {
+                body.classList.remove('blur-active');
+            });
+        </script>
     </nav>
 
     <!-- Hero Section -->
