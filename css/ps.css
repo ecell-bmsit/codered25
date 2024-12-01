@@ -230,7 +230,7 @@ body.modal-open {
         border-radius: 8px;
         padding: 1.2rem;
         position: relative;
-        transform: rotateX(2.1deg) rotateY(5deg);
+        
         background: linear-gradient(
             to bottom right, 
             rgba(18, 18, 40, 0.95), 
@@ -291,7 +291,7 @@ body.modal-open {
     .problem-card {
         padding: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1.3fr));
-        transform: rotateX(1.8deg) rotateY(4deg);
+        
     }
 
     
