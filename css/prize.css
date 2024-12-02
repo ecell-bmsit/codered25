@@ -221,45 +221,43 @@
 
 @media (max-width: 768px) {
     .prize-container {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "first"
-            "second"
-            "third";
-        max-width: 400px;
-        gap: 1.5rem;
-    } 
-    
-    .prize-card.first {
-        grid-area: first;
-    }
-    
-    .prize-card.second {
-        grid-area: second;
-    }
-    
-    .prize-card.third {
-        grid-area: third;
-    }
-    
-     .consolation{
+        display: flex;
         flex-direction: column;
-     }
-
-    .prize-container {
-        grid-template-columns: 1fr;
+        align-items: center; /* Center cards horizontally */
+        justify-content: center; /* Center cards vertically */
         max-width: 400px;
-        perspective: none;
+        margin: 2rem auto; /* Center the entire container */
+        padding: 0 1.5rem;
+        gap: 1.5rem;
     }
-    
-    .prize-card.first {
-        transform: scale(1);
+
+    .prize-card {
+        width: 100%; /* Make cards full width within container */
+        max-width: 350px; /* Limit maximum width */
     }
-    
-    .prize-card.first:hover {
-        transform: translateY(-10px);
+
+    .prize-container .prize-card.second {
+        order: -1; /* Move 2nd place card before 1st place */
     }
-    
+
+    .prize-container .prize-card.first {
+        order: 0; /* Ensure 1st place card comes after 2nd place */
+    }
+
+    .consolation {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center consolation cards */
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .prize-card.consolation {
+        width: 100%;
+        max-width: 350px; /* Consistent with other cards */
+    }
+
     .prize-medal {
         font-size: 2.5rem;
     }
@@ -269,6 +267,15 @@
     }
     
     .prize-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .prize-card.first {
+        transform: scale(1);
+        max-width: 350px;
+    }
+    
+    .prize-card.first:hover {
         transform: translateY(-10px);
     }
 }
