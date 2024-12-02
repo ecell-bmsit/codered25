@@ -67,7 +67,7 @@ body.blur-active > :not(.navbar){
 }
 
 .nav-logo {
-    height: 60px; 
+    height: 40px; 
     width: auto;
     max-width: 150px; /* Prevent logos from becoming too wide */
     object-fit: contain; /* Maintain aspect ratio */
@@ -148,7 +148,7 @@ body.blur-active > :not(.navbar){
     }
 
     .nav-logo {
-        height: 50px; 
+        height: 40px; 
         max-width: 120px;
     }
 

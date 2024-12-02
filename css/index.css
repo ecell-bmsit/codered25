@@ -13,8 +13,8 @@
     background: linear-gradient(135deg, var(--cyber-black) 0%, #120000 50%, var(--cyber-black) 100%);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
-    padding-top: max(var(--navbar-height), 5vh);
-    padding-bottom: 2rem;
+    padding-top: max(var(--navbar-height), 2vh);
+    padding-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,6 +30,20 @@
     padding: 0 1rem;
 }
 
+.hero-section .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem; 
+    padding-top: 2rem; 
+}
+.cyber-text:first-of-type {
+    font-size: 1rem; 
+    margin-bottom: 0.5rem; 
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
 
 .cyber-grid {
     position: absolute;
@@ -62,24 +76,32 @@
 .cyber-main-text {
     font-family: 'sd-dystopian', sans-serif;
     color: var(--cyber-red);
-    font-size: clamp(2.5rem, 8vw, 7rem); 
+    font-size: clamp(2rem, 9vw, 8rem); 
     text-transform: uppercase;
     position: relative;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.01em;
     line-height: 1;
-    margin: 0;
+     text-shadow: 0 0 10px rgba(221, 0, 0, 0.5);
+
     text-align: center;
     width: 100%;
 }
-
 .cyber-subtitle {
     font-family: 'valorant', sans-serif;
-    font-size: clamp(1rem, 3vw, 2rem); 
+    font-size: clamp(1rem, 3vw, 1.4rem); 
     color: var(--cyber-white);
     letter-spacing: 0.1em;
-    margin: 0;
+    margin: 0.25rem 0; 
     text-align: center;
 }
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+
 
 .cyber-text {
     font-size: clamp(0.875rem, 2vw, 1.2rem);
@@ -88,12 +110,17 @@
     margin: 0;
     text-align: center;
 }
+.cyber-text:nth-of-type(2) {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    font-style: italic;
+}
 
 .cyber-timer {
     display: flex;
     justify-content: center;
     gap: clamp(0.5rem, 2vw, 1.5rem);
-    margin: clamp(1rem, 2vh, 1.5rem) 0;
+    margin: 3rem 0;
     width: 100%;
     padding: 0 1rem;
     flex-wrap: wrap;
@@ -145,12 +172,34 @@
     text-decoration: none;
     display: inline-block;
     margin-top: clamp(1rem, 2vh, 1.5rem);
+    min-width: 180px;
+    z-index: 1;
+}
+.cyber-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--cyber-red);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
 }
 
-.cyber-btn:hover {
-    background: var(--cyber-red);
-    color: var(--cyber-black);
-    transform: scale(1.05);
+
+.cyber-text:last-of-type {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-top: 1rem;
+}
+
+
+.cyber-btn:hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 @keyframes gradientBG {
@@ -164,7 +213,24 @@
     100% { transform: perspective(1000px) rotateX(60deg) translateY(100px); }
 }
 
+@media (max-width: 768px) {
+
+    
+    .hero-buttons {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .cyber-btn {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
 @media (max-width: 480px) {
+    
     .cyber-timer {
         gap: 0.5rem;
     }
@@ -181,6 +247,12 @@
     .time-block label {
         font-size: 0.65rem;
     }
+    .hero-buttons {
+        display: grid;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+    
 }
 
 /* About Section */
