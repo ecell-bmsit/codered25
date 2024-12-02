@@ -216,17 +216,21 @@
 @media (max-width: 768px) {
 
 
-     .hero-buttons {
+    .hero-buttons {
+        display: flex;
         flex-direction: row;
-        justify-content: center; 
+        justify-content: center;
         align-items: center;
         gap: 1rem;
-        padding: 1rem;
-        flex-wrap: wrap; 
+        padding: 1rem 0;
+        flex-wrap: wrap;
     }
+
     .cyber-btn {
-        width: 80%;
-        max-width: 300px;
+        flex-grow: 1;
+        min-width: 120px;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -249,9 +253,13 @@
         font-size: 0.65rem;
     }
     .hero-buttons {
-        display: grid;
-        gap: 0.3rem;
-        margin: 1rem 0;
+        gap: 0.75rem;
+    }
+
+    .cyber-btn {
+        min-width: 100px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
     
 }
