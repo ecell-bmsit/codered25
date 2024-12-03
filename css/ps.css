@@ -81,7 +81,7 @@ nav {
 
 .announcement-title {
     font-family: 'valorant', sans-serif;
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     color: white;
     margin-bottom: 2rem;
     text-transform: uppercase;

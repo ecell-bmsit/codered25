@@ -126,7 +126,9 @@
 .prize-card.first:hover {
     transform: scale(1.05) translateY(-10px) rotateX(5deg);
 }
-
+.consolation-text{
+    font-size: 2rem !important;
+}
 .prize-medal {
     font-size: 3rem;
     color: var(--text-primary);
