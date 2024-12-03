@@ -106,7 +106,7 @@
             <div class="row min-vh-100 align-items-center justify-content-center text-center">
 
                 <div class="col-lg-12">
-                        <p class="cyber-text">BMSIT Presents</p>
+                        <p class="cyber-text">BMSIT&M Presents</p>
                         <h1 class="display-1 cyber-main-text" data-baffle>CODE RED </h1>
                         <p class="cyber-text">Code Till You Drop.</p>
                         <h2 class="cyber-subtitle">National Level Hackathon</h2>
@@ -221,12 +221,12 @@
 
                 <div class="prize-card second">
                     <div class="prize-medal">2nd</div>
-                    <div class="prize-amount">₹30,000</div>
+                    <div class="prize-amount">₹25,000</div>
                 </div>
 
                 <div class="prize-card first">
                     <div class="prize-medal">1st</div>
-                    <div class="prize-amount">₹50,000</div>
+                    <div class="prize-amount">₹35,000</div>
                 </div>
 
                 <div class="prize-card third">
@@ -434,7 +434,9 @@
                 </div>
                 <div class="faq-answer">
                     <p>You can email us with any questions you still have. Join:
-                        <a class="btn btn-primary" href="https://discord.gg/5kntf93DMC" target="_blank">Our Discord</a>
+                        <a class="btn btn-primary" href="https://discord.gg/5kntf93DMC" target="_blank">
+                            <i class="fab fa-discord"></i>
+                            Our Discord</a>
                         or email us at:
                         <a href="mailto:ecell@bmsit.in">ecell@bmsit.in</a>
                     </p>
@@ -568,9 +570,9 @@ const images = [
   './img/Codered-23-pictures/1.webp',
     './img/Codered-23-pictures/2.webp',
     './img/Codered-23-pictures/3.webp',
-    './img/Codered-23-pictures/4.webp',
     './img/Codered-23-pictures/5.webp',
-    './img/Codered-23-pictures/7.webp'
+    './img/Codered-23-pictures/7.webp',
+    './img/Codered-23-pictures/8.webp',
 ];
 
 const slideGenerator = () => {
@@ -624,6 +626,35 @@ window.onload = () => {
     </script>
     <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
+
+    <script>
+        const scrollUpBtn = document.getElementById("scrollUpBtn");
+        
+        
+        document.addEventListener("DOMContentLoaded", function () {
+    const scrollUpBtn = document.getElementById("scrollUpBtn");
+
+    
+    window.onscroll = function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollUpBtn.style.display = "block";
+        } else {
+            scrollUpBtn.style.display = "none";
+        }
+    };
+
+    
+    scrollUpBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+});
+        </script>
+
+    <button id="scrollUpBtn" class="cyber-btn-scroll" title="Go to top">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+
+
 
 </body>
 
