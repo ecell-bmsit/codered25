@@ -42,13 +42,14 @@
                     </li>
 
                     <li class="nav-item">
-                         <nav class="navbar navbar-expand-lg navbar-dark fixed-top cyber-nav">
+                        <nav class="navbar navbar-expand-lg navbar-dark fixed-top cyber-nav">
                             <div class="container">
                                 <a class="navbar-brand" href="index.html">
                                     <i class="fas fa-arrow-left"> </i>
                                 </a>
-                    
-                                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNav">
                                     <input type="checkbox" name="toggle-menu" id="toggle-menu">
                                     <label for="toggle-menu" type="button" class="toggle-btn">
                                         <div class="bar"></div>
@@ -57,76 +58,76 @@
                                     </label>
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarNav">
-                                   
+
                                     <ul class="navbar-nav ms-auto">
                                         <li class="nav-item">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="timeline.html">Timeline</a>
-                                            </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="timeline.html">Timeline</a>
+                                        </li>
 
-                                            <a class="nav-link" href="ecell.html">About us</a>
-                                        </li>
-                                      
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="ps.html">Problems</a>
-                                        </li>
-                                        
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="index.html#gallery">Gallery</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="faq.html">FAQ</a>
-                                        </li>
-                            
-                                    </ul>
-                                </div>
-                            </div><
-                            <script>
-                                const navbarCollapse = document.getElementById('navbarNav');
-                           const body = document.body;
-                           const toggleMenu = document.getElementById('toggle-menu');
-                       
-                       
-                           navbarCollapse.addEventListener('show.bs.collapse', () => {
-                               body.classList.add('blur-active');
-                           });
-                       
-                       
-                           navbarCollapse.addEventListener('hidden.bs.collapse', () => {
-                               body.classList.remove('blur-active');
-                           });
-                       
-                           document.addEventListener('click', (event) => {
-                               const isClickInside = navbarCollapse.contains(event.target) || 
-                                                     event.target.matches('.navbar-toggler, .nav-link');
-                       
-                               if (!isClickInside) {
-                                   const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                                   if (bsCollapse && navbarCollapse.classList.contains('show')) {
-                                       bsCollapse.hide();
-                                       body.classList.remove('blur-active');
-                                       toggleMenu.checked = false; 
-                                   }
-                               }
-                           });
-                               </script>
-                        </nav>a class="nav-link" href="ps.html">Problems</a>
+                                        <a class="nav-link" href="ecell.html">About us</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#timeline">Timeline</a>
+                        <a class="nav-link" href="ps.html">Problems</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
+                        <a class="nav-link" href="faq.html">FAQ</a>
                     </li>
-
-                </ul>
 
                 </ul>
             </div>
         </div>
+        < <script>
+            const navbarCollapse = document.getElementById('navbarNav');
+            const body = document.body;
+            const toggleMenu = document.getElementById('toggle-menu');
+
+
+            navbarCollapse.addEventListener('show.bs.collapse', () => {
+            body.classList.add('blur-active');
+            });
+
+
+            navbarCollapse.addEventListener('hidden.bs.collapse', () => {
+            body.classList.remove('blur-active');
+            });
+
+            document.addEventListener('click', (event) => {
+            const isClickInside = navbarCollapse.contains(event.target) ||
+            event.target.matches('.navbar-toggler, .nav-link');
+
+            if (!isClickInside) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse && navbarCollapse.classList.contains('show')) {
+            bsCollapse.hide();
+            body.classList.remove('blur-active');
+            toggleMenu.checked = false;
+            }
+            }
+            });
+            </script>
+    </nav>a class="nav-link" href="ps.html">Problems</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="index.html#timeline">Timeline</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="index.html#gallery">Gallery</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">FAQ</a>
+    </li>
+
+    </ul>
+
+    </ul>
+    </div>
+    </div>
     </nav>
     <div id="particles-bg"></div>
     <section id="about" class="cyber-section">
@@ -137,37 +138,56 @@
                 <div class="problem-grid">
                     <div class="problem-card">
 
-                        <h2>Native Multilingual RAG System for PDF files</h2>
-                        <p>Create a library management system that extracts and indexes content from PDF books, enabling
-                            advanced search capabilities within the book's content</p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Urban Mobility Optimizer</h2>
-                        <p>Create an intelligent transportation management system that reduces traffic congestion and
-                            optimizes route planning using predictive analytics.</p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Quantum Encryption Protocol</h2>
-                        <p>Develop a quantum-resistant encryption framework that can protect sensitive data against
-                            emerging computational threats.</p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Renewable Energy Predictor</h2>
-                        <p>Build a predictive model that forecasts renewable energy generation based on environmental
-                            and meteorological data.</p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Augmented Reality Interface</h2>
-                        <p>Design an intuitive AR interface for complex industrial maintenance and repair operations.
+                        <h2>AI-Powered Interview and Placement Training</h2>
+                        <p>Design an AI-powered solution to bridge the gap between traditional placement preparation and
+                            real-world interview success. The platform should simulate realistic interviews, offer
+                            personalized feedback, evaluate resumes, and provide targeted technical training. It aims to
+                            enhance skills, build confidence, and ensure candidates are job-ready for real-world hiring
+                            challenges.
                         </p>
+                    </div>
+
+                    <div class="problem-card">
+
+                        <h2>Multi-Agent AI Data Analyst for Comprehensive Data Analysis and Reporting</h2>
+                        <p>Develop an AI-driven data analysis solution that functions as a virtual data analyst using a
+                            multi-agent system. Your solution can include reading files and other data sources,
+                            performing complex numerical and logical operations, and conducting in-depth analyses.
+                            Utilize specialized AI agents to perform sanity checks, generate insightful data
+                            visualizations, produce comprehensive executive summaries, and detailed reports from the
+                            analysis.
+                        </p>
+                    </div>
+
+                    <div class="problem-card">
+
+                        <h2>Intelligent Library Assistant with Chat Interface</h2>
+                        <p>Develop an AI-powered library management Software Solution inspired by tools like Google's
+                            NotebookLM. The system should store and organize PDF books, automatically extract their
+                            content, and index it in a vector database for advanced semantic search. Incorporate a
+                            chat-style interface for natural user interaction, providing accurate and relevant answers
+                            grounded in the indexed content. Implement measures to minimize AI hallucinations, such as
+                            source citation and strict adherence to the uploaded material. Maintain the simplicity and
+                            user-friendliness of traditional library systems while enhancing information retrieval and
+                            user experience through advanced AI capabilities.</p>
+                    </div>
+
+                    <div class="problem-card">
+
+                        <h2>Enhancing Supply Chain Transparency and Efficiency with Blockchain</h2>
+                        <p>Develop a dual-blockchain solution: a private blockchain for secure supplier, manufacturer,
+                            and warehouse data management, and a public blockchain for transparent product tracking,
+                            real-time shipment updates, and automated payment settlements to enhance supply chain trust
+                            and efficiency.</p>
+                    </div>
+
+                    <div class="problem-card">
+
+                        <h2>Autonomous cybersecurity for real time iot node protection</h2>
+                        <p>Design an autonomous network level cybersecurity framework for iot environments that detects,
+                            isolates and recovers compromised nodes in real time with minimal service disruption and
+                            scalability across heterogeneous networks. create a three node simulation to demonstrate the
+                            functioning.</p>
                     </div>
 
                     <div class="problem-card">
@@ -177,26 +197,30 @@
                             democratic processes.</p>
                     </div>
 
-            <div class="problem-card">
-                <h2>Smart Inventory Management</h2>
-                <p>Develop an IoT-based system to monitor and manage inventory levels in real-time, reducing waste and optimizing stock levels.</p>
-            </div>
+                    <div class="problem-card">
+                        <h2>Smart Inventory Management</h2>
+                        <p>Develop an IoT-based system to monitor and manage inventory levels in real-time, reducing
+                            waste and optimizing stock levels.</p>
+                    </div>
 
-            <div class="problem-card">
-                <h2>Predictive Maintenance for Transport Fleets</h2>
-                <p>Create a predictive maintenance system for transportation fleets using IoT sensors and machine learning to minimize downtime and reduce costs.</p>
-            </div>
+                    <div class="problem-card">
+                        <h2>Predictive Maintenance for Transport Fleets</h2>
+                        <p>Create a predictive maintenance system for transportation fleets using IoT sensors and
+                            machine learning to minimize downtime and reduce costs.</p>
+                    </div>
 
-            <div class="problem-card">
-                <h2>Healthcare Data Analytics</h2>
-                <p>Design a data analytics platform for healthcare providers to analyze patient data and improve treatment outcomes using predictive analytics.</p>
-            </div>
+                    <div class="problem-card">
+                        <h2>Healthcare Data Analytics</h2>
+                        <p>Design a data analytics platform for healthcare providers to analyze patient data and improve
+                            treatment outcomes using predictive analytics.</p>
+                    </div>
 
-            <div class="problem-card">
-                <h2>IoT-enabled Smart City Solutions</h2>
-                <p>Build an IoT-based platform to enhance urban living by integrating smart lighting, waste management, and traffic monitoring systems.</p>
-            </div>
-        
+                    <div class="problem-card">
+                        <h2>IoT-enabled Smart City Solutions</h2>
+                        <p>Build an IoT-based platform to enhance urban living by integrating smart lighting, waste
+                            management, and traffic monitoring systems.</p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -213,7 +237,7 @@
             <button class="return-btn" onclick="closeProblemModal()">Return</button>
         </div>
     </div>
-    
+
     <!-- Updated Footer -->
     <footer class="cyber-footer">
         <div class="container">
@@ -223,13 +247,13 @@
                         <h4 class="cyber-footer-title">Quick Links</h4>
                         <ul class="cyber-footer-links">
                             <li><a href="https://www.google.com/maps/place/BMS+Institute+of+Technology+and+Management/@13.133363,77.5673768,15z/data=!4m2!3m1!1s0x0:0x49c4c47a68a60b9c?sa=X&ved=2ahUKEwie0qXhxqODAxVdyzgGHc2iBo0Q_BJ6BAhdEAA"
-                                    class="cyber-footer-links">Campus Map</a></li>
-                            <li><a href="https://drive.google.com/file/d/1MJfJFiUWddrWKEuDXIzvmxdFyn5Ilsc6/view?usp=sharing"
-                                    class="cyber-footer-links">Code of Conduct</a></li>
-                            <li><a href="https://drive.google.com/file/d/1KNeE-gVttxuj48JZwoXNnTXIjb9b8Np7/view?usp=sharing"
-                                    class="cyber-footer-links">Privacy Policy</a></li>
-                            <li><a href="https://drive.google.com/file/d/1qBv7rnb0pk6Xlzr7Bhvic9v-2C4R1mKl/view?usp=sharing"
-                                    class="cyber-footer-links">Terms & Conditions</a></li>
+                                    target="_blank" class="cyber-footer-links">Campus Map</a></li>
+                            <li><a href="https://drive.google.com/file/d/1KEiJNbwnKTV2YA2pgCnLJh3Kmg2E8K2H/view?usp=sharing"
+                                    target="_blank" class="cyber-footer-links">Code of Conduct</a></li>
+                            <li><a href="https://drive.google.com/file/d/1zbTTXwcvCVpX0sRNQe6ezivePUYEIKwv/view?usp=sharing"
+                                    target="_blank" class="cyber-footer-links">Privacy Policy</a></li>
+                            <li><a href="https://drive.google.com/file/d/1dqU8tj1mLavczRrX_Mrt83eRcCGzPleX/view?usp=sharing"
+                                    target="_blank" class="cyber-footer-links">Terms & Conditions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -265,16 +289,16 @@
                         </div>
                     </div>
                     <div class="cyber-footer-social mt-4">
-                        <a href="https://www.instagram.com/ecell.bmsit/" class="cyber-footer-links">
+                        <a href="https://www.instagram.com/ecell.bmsit/" target="_blank" class="cyber-footer-links">
                             <i class="fab fa-instagram fa-2x"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/ecellbmsit/" class="cyber-footer-links">
+                        <a href="https://www.linkedin.com/in/ecellbmsit/" target="_blank" class="cyber-footer-links">
                             <i class="fab fa-linkedin fa-2x m-2"></i>
                         </a>
-                        <a href="mailto:ecell@bmsit.in" target="_blank" class="cyber-footer-links">
+                        <a href="mailto:ecell@bmsit.in" target="_blank" target="_blank" class="cyber-footer-links">
                             <i class="fa fa-envelope fa-2x"></i>
                         </a>
-                        <a href="https://discord.gg/5kntf93DMC" class="cyber-footer-links">
+                        <a href="https://discord.gg/5kntf93DMC" target="_blank" class="cyber-footer-links">
                             <i class="fa-brands fa-discord fa-2x"></i>
                         </a>
                     </div>
@@ -291,6 +315,7 @@
             </div>
         </div>
     </footer>
+
     <script src="./js/ps.js">
 
 
