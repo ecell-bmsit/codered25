@@ -196,7 +196,7 @@
             order: initial;
         }
         .consolation {
-            grid-column: 1 / -1;  /* Span all columns */
+            grid-column: 1 / -1; 
             display: flex;
             justify-content: center;
             gap: 2rem;
@@ -205,7 +205,7 @@
     
      
     .prize-card.consolation {
-        width: auto;  /* Allow cards to size based on content */
+        width: auto; 
     }
 
     .prize-card.first {
@@ -223,31 +223,36 @@
     .prize-container {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center cards horizontally */
-        justify-content: center; /* Center cards vertically */
+        align-items: center; 
+        justify-content: center;
         max-width: 400px;
-        margin: 2rem auto; /* Center the entire container */
+        margin: 2rem auto;
         padding: 0 1.5rem;
         gap: 1.5rem;
     }
 
     .prize-card {
-        width: 100%; /* Make cards full width within container */
-        max-width: 350px; /* Limit maximum width */
-    }
-
-    .prize-container .prize-card.second {
-        order: -1; /* Move 2nd place card before 1st place */
+        width: 100%; 
+        max-width: 350px;
     }
 
     .prize-container .prize-card.first {
-        order: 0; /* Ensure 1st place card comes after 2nd place */
+        order: 0; 
+    }
+
+    .prize-container .prize-card.second {
+        order: 1; 
+    }
+
+    .prize-container .prize-card.third {
+        order: 2; 
     }
 
     .consolation {
+        order: 3;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center consolation cards */
+        align-items: center; 
         justify-content: center;
         gap: 1.5rem;
         width: 100%;
@@ -255,7 +260,7 @@
 
     .prize-card.consolation {
         width: 100%;
-        max-width: 350px; /* Consistent with other cards */
+        max-width: 350px;
     }
 
     .prize-medal {
