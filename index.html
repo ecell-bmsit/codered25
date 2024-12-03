@@ -624,6 +624,35 @@ window.onload = () => {
     <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
 
+    <script>
+        const scrollUpBtn = document.getElementById("scrollUpBtn");
+        
+        
+        document.addEventListener("DOMContentLoaded", function () {
+    const scrollUpBtn = document.getElementById("scrollUpBtn");
+
+    
+    window.onscroll = function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollUpBtn.style.display = "block";
+        } else {
+            scrollUpBtn.style.display = "none";
+        }
+    };
+
+    
+    scrollUpBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+});
+        </script>
+
+    <button id="scrollUpBtn" class="cyber-btn-scroll" title="Go to top">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+
+
+
 </body>
 
 </html>
