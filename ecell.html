@@ -22,73 +22,79 @@
   <div id="particles-bg"></div>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top cyber-nav">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="./img/logoBMS.png" alt="BMSIT Logo" class="nav-logo">
-        <img src="./img/logo.png" alt="CodeRed Logo" class="nav-logo">
-      </a>
+        <a class="navbar-brand" href="index.html">
+            <img src="./img/logoBMS.png" alt="BMSIT Logo" class="nav-logo">
+            <img src="./img/logo.png" alt="CodeRed Logo" class="nav-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <input type="checkbox" name="toggle-menu" id="toggle-menu">
+            <label for="toggle-menu" type="button" class="toggle-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </label>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <input type="checkbox" name="toggle-menu" id="toggle-menu">
-                <label for="toggle-menu" type="button" class="toggle-btn">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </label>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-               
-                <ul class="navbar-nav ms-auto">
-                  
-                    <li class="nav-item">
-                        <a class="nav-link" href="ps.html">Problems</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#timeline">Timeline</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#faq">FAQ</a>
-                    </li>
-        
-                </ul>
-            </div>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="timeline.html">Timeline</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ecell.html">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ps.html">Problems</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq.html">Faq</a>
+                </li>
+
+
+            </ul>
+
         </div>
-        <script>
-            const navbarCollapse = document.getElementById('navbarNav');
-       const body = document.body;
-       const toggleMenu = document.getElementById('toggle-menu');
-   
-   
-       navbarCollapse.addEventListener('show.bs.collapse', () => {
-           body.classList.add('blur-active');
-       });
-   
-   
-       navbarCollapse.addEventListener('hidden.bs.collapse', () => {
-           body.classList.remove('blur-active');
-       });
-   
-       document.addEventListener('click', (event) => {
-           const isClickInside = navbarCollapse.contains(event.target) || 
-                                 event.target.matches('.navbar-toggler, .nav-link');
-   
-           if (!isClickInside) {
-               const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-               if (bsCollapse && navbarCollapse.classList.contains('show')) {
-                   bsCollapse.hide();
-                   body.classList.remove('blur-active');
-                   toggleMenu.checked = false; 
-               }
-           }
-       });
-           </script>
-    </nav>
+    </div>
+    <script>
+        const navbarCollapse = document.getElementById('navbarNav');
+        const body = document.body;
+        const toggleMenu = document.getElementById('toggle-menu');
+
+
+        navbarCollapse.addEventListener('show.bs.collapse', () => {
+            body.classList.add('blur-active');
+        });
+
+
+        navbarCollapse.addEventListener('hidden.bs.collapse', () => {
+            body.classList.remove('blur-active');
+        });
+
+        document.addEventListener('click', (event) => {
+            const isClickInside = navbarCollapse.contains(event.target) ||
+                event.target.matches('.navbar-toggler, .nav-link');
+
+            if (!isClickInside) {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                if (bsCollapse && navbarCollapse.classList.contains('show')) {
+                    bsCollapse.hide();
+                    body.classList.remove('blur-active');
+                    toggleMenu.checked = false;
+                }
+            }
+        });
+    </script>
+</nav>
+
+
   <section id="about" class="cyber-section">
     <div class="container">
       <header>
-        <h2 class="volunteer-title">Our Volunteers</h2>
+        <h2 class="volunteer-title">Our Team</h2>
       </header>
 
       <div class="volunteer-container" id="volunteer-container"></div>
