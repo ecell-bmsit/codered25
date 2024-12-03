@@ -107,10 +107,10 @@
 
                 <div class="col-lg-12">
                         <p class="cyber-text">BMSIT&M Presents</p>
-                        <h1 class="display-1 cyber-main-text" data-baffle>CODE RED </h1>
+                        <h1 class="display-1 cyber-main-text" data-baffle>CODE RED</h1>
                         <p class="cyber-text">Code Till You Drop.</p>
                         <h2 class="cyber-subtitle">National Level Hackathon</h2>
-                        <h2 class="cyber-subtitle">9 & 10 January</h2>
+                        <h2 class="cyber-subtitle">9 & 10 January,2025</h2>
                        
                     </div>
                     <div class="hero-buttons">
@@ -152,7 +152,7 @@
             <h2 class="cyber-section-title">About The Event</h2>
             <div class="row">
                 <div class="col-lg-6">
-                    <p class="cyber-text about-text">BMSIT&M presents "CODE RED '25," a 25-hour hackathon for students,
+                    <p class="cyber-text about-text">BMSIT&M presents "CODE RED '25," a 25-hour  National level hackathon for students,
                         focused on
                         real-world problems that bridge academia and industry. Participants will innovate and prototype
                         solutions to practical challenges. This event offers a platform for students to showcase their
@@ -294,7 +294,7 @@
                 <div class="timeline-item scroll-reveal-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-time">21st January</div>
+                        <div class="timeline-time">21st December</div>
                         <h3>Idea Submission Deadline</h3>
                         <p>Round 1 ends at 11:59 PM</p>
                     </div>
@@ -363,7 +363,7 @@
 
                     <div class="participate-reason">
                         <h3>Win Big</h3>
-                        <p>Compete for a chance to win big, cash prizes up to 1 Lakh INR</p>
+                        <p>Compete for a chance to win big cash prizes from a total prize pool of 1 Lakh INR</p>
                     </div>
 
                     <div class="participate-reason">
@@ -556,72 +556,209 @@
         });
 
         
-const sliderContainer = document.querySelector(".container-gallery");
-const innerSlider = document.querySelector(".slider-inner");
-let active = false, startX = 0, slideInterval;
-const slideSpeed = 1.9; 
-const slideDelay = 16; 
-let isHovered = false;
-
-const images = [
-    './img/Codered-23-pictures/12.jpeg',
-    './img/Codered-23-pictures/13.jpeg',
-    './img/Codered-23-pictures/11.jpg',
-  './img/Codered-23-pictures/1.webp',
-    './img/Codered-23-pictures/2.webp',
-    './img/Codered-23-pictures/3.webp',
-    './img/Codered-23-pictures/5.webp',
-    './img/Codered-23-pictures/8.webp',
-];
-
-const slideGenerator = () => {
-    for (let img of images) {
-        const div = document.createElement("div");
-        div.classList.add("slide");
-        div.innerHTML = `<img src="${img}" class="image" alt="slider image">`;
-
-    
-        div.addEventListener("mouseenter", () => {
-            isHovered = true;
-            clearInterval(slideInterval);
-        });
-
-      
-        div.addEventListener("mouseleave", () => {
-            isHovered = false;
-            startSlideShow();
-        });
-
-        innerSlider.appendChild(div);
-    }
-    innerSlider.style.gridTemplateColumns = `repeat(${images.length}, 1fr)`;
-};
-
-const moveSlides = () => {
-    if (!isHovered) {
-        const currentLeft = parseFloat(innerSlider.style.left || "0px");
-        const slideWidth = innerSlider.firstElementChild.offsetWidth;
+        class GallerySlider {
+    constructor(containerSelector, innerSliderSelector) {
+        this.sliderContainer = document.querySelector(containerSelector);
+        this.innerSlider = document.querySelector(innerSliderSelector);
+        
+        this.images = [
+            './img/Codered-23-pictures/12.jpeg',
+            './img/Codered-23-pictures/13.jpeg',
+            './img/Codered-23-pictures/11.jpg',
+            './img/Codered-23-pictures/1.webp',
+            './img/Codered-23-pictures/2.webp',
+            './img/Codered-23-pictures/3.webp',
+            './img/Codered-23-pictures/5.webp',
+            './img/Codered-23-pictures/8.webp',
+        ];
 
        
-        innerSlider.style.left = `${currentLeft - slideSpeed}px`;
+        this.startX = 0;
+        this.startY = 0;
+        this.isDragging = false;
+        this.threshold = 50; 
+        this.isHorizontalSwipe = false;
 
+   
+        this.currentSlide = 0;
+        this.slideInterval = null;
+        this.debounceTimer = null;
+
+       
+        this.moveSlides = this.moveSlides.bind(this);
+        this.startSlideShow = this.startSlideShow.bind(this);
+        this.initEvents = this.initEvents.bind(this);
+        this.handleResize = this.handleResize.bind(this);
+    }
+
+    initEvents() {
+        window.addEventListener('resize', this.debounce(this.handleResize, 250));
+    }
+
+    handleResize() {
         
-        if (Math.abs(currentLeft) >= slideWidth) {
-            innerSlider.appendChild(innerSlider.firstElementChild);
-            innerSlider.style.left = `${currentLeft + slideWidth}px`;
+        if (this.innerSlider) {
+            this.innerSlider.style.gridTemplateColumns = `repeat(${this.images.length}, 1fr)`;
         }
     }
-};
 
-const startSlideShow = () => {
-    slideInterval = setInterval(moveSlides, slideDelay);
-};
+    debounce(func, delay) {
+        return (...args) => {
+            clearTimeout(this.debounceTimer);
+            this.debounceTimer = setTimeout(() => func(...args), delay);
+        };
+    }
 
-window.onload = () => {
-    slideGenerator();
-    innerSlider.style.left = "0px";
-    startSlideShow();
-};
+    slideGenerator() {
+        
+        this.innerSlider.innerHTML = '';
+
+        this.images.forEach((imgSrc, index) => {
+            const div = document.createElement("div");
+            div.classList.add("slide");
+            
+            const img = document.createElement("img");
+            img.src = imgSrc;
+            img.classList.add("image");
+            img.alt = `Slider image ${index + 1}`;
+
+            div.appendChild(img);
+            this.innerSlider.appendChild(div);
+        });
+
+     
+        this.innerSlider.style.gridTemplateColumns = `repeat(${this.images.length}, 1fr)`;
+        this.initSwipeEvents();
+    }
+
+    initSwipeEvents() {
+    
+        this.sliderContainer.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: true });
+        this.sliderContainer.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
+        this.sliderContainer.addEventListener('touchend', this.handleTouchEnd.bind(this), { passive: true });
+
+       
+        this.sliderContainer.addEventListener('mousedown', this.handleMouseDown.bind(this));
+        this.sliderContainer.addEventListener('mousemove', this.handleMouseMove.bind(this));
+        this.sliderContainer.addEventListener('mouseup', this.handleMouseUp.bind(this));
+        this.sliderContainer.addEventListener('mouseleave', this.handleMouseUp.bind(this));
+    }
+
+    handleTouchStart(e) {
+        this.startX = e.touches[0].clientX;
+        this.startY = e.touches[0].clientY;
+        this.isDragging = true;
+        this.isHorizontalSwipe = false;
+        clearInterval(this.slideInterval);
+    }
+
+    handleTouchMove(e) {
+        if (!this.isDragging) return;
+
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+        const diffX = currentX - this.startX;
+        const diffY = currentY - this.startY;
+
+        
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            e.preventDefault();
+            this.isHorizontalSwipe = true;
+        }
+    }
+
+    handleTouchEnd(e) {
+        if (!this.isDragging) return;
+
+        const endX = e.changedTouches[0].clientX;
+        const diffX = endX - this.startX;
+
+        if (this.isHorizontalSwipe) {
+            if (diffX > this.threshold) {
+                this.previousSlide();
+            } else if (diffX < -this.threshold) {
+                this.nextSlide();
+            }
+        }
+
+        this.isDragging = false;
+        this.isHorizontalSwipe = false;
+        this.startSlideShow();
+    }
+
+    handleMouseDown(e) {
+        this.startX = e.clientX;
+        this.isDragging = true;
+        clearInterval(this.slideInterval);
+    }
+
+    handleMouseMove(e) {
+        if (!this.isDragging) return;
+    }
+
+    handleMouseUp(e) {
+        if (!this.isDragging) return;
+
+        const endX = e.clientX;
+        const diffX = endX - this.startX;
+
+        if (diffX > this.threshold) {
+            this.previousSlide();
+        } else if (diffX < -this.threshold) {
+            this.nextSlide();
+        }
+
+        this.isDragging = false;
+        this.startSlideShow();
+    }
+
+    nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.images.length;
+        this.updateSliderPosition();
+    }
+
+    previousSlide() {
+        this.currentSlide = (this.currentSlide - 1 + this.images.length) % this.images.length;
+        this.updateSliderPosition();
+    }
+
+    updateSliderPosition() {
+        const slideWidth = this.innerSlider.firstElementChild.offsetWidth;
+        this.innerSlider.style.transform = `translateX(-${this.currentSlide * slideWidth}px)`;
+    }
+
+    moveSlides() {
+        if (!this.isDragging) {
+            const currentLeft = parseFloat(this.innerSlider.style.left || "0px");
+            const slideWidth = this.innerSlider.firstElementChild.offsetWidth;
+
+            this.innerSlider.style.left = `${currentLeft - 1.9}px`;
+
+            if (Math.abs(currentLeft) >= slideWidth) {
+                this.innerSlider.appendChild(this.innerSlider.firstElementChild);
+                this.innerSlider.style.left = `${currentLeft + slideWidth}px`;
+            }
+        }
+    }
+
+    startSlideShow() {
+        clearInterval(this.slideInterval);
+        this.slideInterval = setInterval(this.moveSlides, 16);
+    }
+
+    init() {
+        this.slideGenerator();
+        this.initEvents();
+        this.innerSlider.style.left = "0px";
+        this.startSlideShow();
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const gallerySlider = new GallerySlider(".container-gallery", ".slider-inner");
+    gallerySlider.init();
+});
     </script>
     <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
