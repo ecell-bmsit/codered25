@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/common.css">
     <script src="./js/common.js"></script>
+    <script src="./js/faq.js"></script>
     <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="./css/ps.css">
     <link rel="stylesheet" href="./css/index.css">
 
     <title>Document</title>
@@ -28,46 +30,27 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top cyber-nav">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="./img/logoBMS.png" alt="BMSIT Logo" class="nav-logo">
                 <img src="./img/logo.png" alt="CodeRed Logo" class="nav-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <input type="checkbox" name="toggle-menu" id="toggle-menu">
+                <label for="toggle-menu" type="button" class="toggle-btn">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </label>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="timeline.html">Timeline</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="ecell.html">Team</a>
                     </li>
-
-                    <li class="nav-item">
-                        <nav class="navbar navbar-expand-lg navbar-dark fixed-top cyber-nav">
-                            <div class="container">
-                                <a class="navbar-brand" href="index.html">
-                                    <i class="fas fa-arrow-left"> </i>
-                                </a>
-
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#navbarNav">
-                                    <input type="checkbox" name="toggle-menu" id="toggle-menu">
-                                    <label for="toggle-menu" type="button" class="toggle-btn">
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                    </label>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarNav">
-
-                                    <ul class="navbar-nav ms-auto">
-                                        <li class="nav-item">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="timeline.html">Timeline</a>
-                                        </li>
-
-                                        <a class="nav-link" href="ecell.html">About us</a>
-                    </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="ps.html">Problems</a>
                     </li>
@@ -76,169 +59,58 @@
                         <a class="nav-link" href="index.html#gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="faq.html">FAQ</a>
+                        <a class="nav-link" href="faq.html">Faq</a>
                     </li>
 
+
                 </ul>
+
             </div>
         </div>
-        < <script>
+        <script>
             const navbarCollapse = document.getElementById('navbarNav');
             const body = document.body;
             const toggleMenu = document.getElementById('toggle-menu');
 
 
             navbarCollapse.addEventListener('show.bs.collapse', () => {
-            body.classList.add('blur-active');
+                body.classList.add('blur-active');
             });
 
 
             navbarCollapse.addEventListener('hidden.bs.collapse', () => {
-            body.classList.remove('blur-active');
+                body.classList.remove('blur-active');
             });
 
             document.addEventListener('click', (event) => {
-            const isClickInside = navbarCollapse.contains(event.target) ||
-            event.target.matches('.navbar-toggler, .nav-link');
+                const isClickInside = navbarCollapse.contains(event.target) ||
+                    event.target.matches('.navbar-toggler, .nav-link');
 
-            if (!isClickInside) {
-            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-            if (bsCollapse && navbarCollapse.classList.contains('show')) {
-            bsCollapse.hide();
-            body.classList.remove('blur-active');
-            toggleMenu.checked = false;
-            }
-            }
+                if (!isClickInside) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                    if (bsCollapse && navbarCollapse.classList.contains('show')) {
+                        bsCollapse.hide();
+                        body.classList.remove('blur-active');
+                        toggleMenu.checked = false;
+                    }
+                }
             });
-            </script>
-    </nav>a class="nav-link" href="ps.html">Problems</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="index.html#timeline">Timeline</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="index.html#gallery">Gallery</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">FAQ</a>
-    </li>
-
-    </ul>
-
-    </ul>
-    </div>
-    </div>
+        </script>
     </nav>
+
     <div id="particles-bg"></div>
-    <section id="about" class="cyber-section">
+    <section id="psWait" class="cyber-section">
         <div class="container">
-            <h2 class="cyber-section-title">Problem Statements</h2>
-            <div class="cyberpunk-container">
-
-                <div class="problem-grid">
-                    <div class="problem-card">
-
-                        <h2>AI-Powered Interview and Placement Training</h2>
-                        <p>Design an AI-powered solution to bridge the gap between traditional placement preparation and
-                            real-world interview success. The platform should simulate realistic interviews, offer
-                            personalized feedback, evaluate resumes, and provide targeted technical training. It aims to
-                            enhance skills, build confidence, and ensure candidates are job-ready for real-world hiring
-                            challenges.
-                        </p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Multi-Agent AI Data Analyst for Comprehensive Data Analysis and Reporting</h2>
-                        <p>Develop an AI-driven data analysis solution that functions as a virtual data analyst using a
-                            multi-agent system. Your solution can include reading files and other data sources,
-                            performing complex numerical and logical operations, and conducting in-depth analyses.
-                            Utilize specialized AI agents to perform sanity checks, generate insightful data
-                            visualizations, produce comprehensive executive summaries, and detailed reports from the
-                            analysis.
-                        </p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Intelligent Library Assistant with Chat Interface</h2>
-                        <p>Develop an AI-powered library management Software Solution inspired by tools like Google's
-                            NotebookLM. The system should store and organize PDF books, automatically extract their
-                            content, and index it in a vector database for advanced semantic search. Incorporate a
-                            chat-style interface for natural user interaction, providing accurate and relevant answers
-                            grounded in the indexed content. Implement measures to minimize AI hallucinations, such as
-                            source citation and strict adherence to the uploaded material. Maintain the simplicity and
-                            user-friendliness of traditional library systems while enhancing information retrieval and
-                            user experience through advanced AI capabilities.</p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Enhancing Supply Chain Transparency and Efficiency with Blockchain</h2>
-                        <p>Develop a dual-blockchain solution: a private blockchain for secure supplier, manufacturer,
-                            and warehouse data management, and a public blockchain for transparent product tracking,
-                            real-time shipment updates, and automated payment settlements to enhance supply chain trust
-                            and efficiency.</p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Autonomous cybersecurity for real time iot node protection</h2>
-                        <p>Design an autonomous network level cybersecurity framework for iot environments that detects,
-                            isolates and recovers compromised nodes in real time with minimal service disruption and
-                            scalability across heterogeneous networks. create a three node simulation to demonstrate the
-                            functioning.</p>
-                    </div>
-
-                    <div class="problem-card">
-
-                        <h2>Decentralized Governance Platform</h2>
-                        <p>Create a blockchain-based governance system that ensures transparent and tamper-proof
-                            democratic processes.</p>
-                    </div>
-
-                    <div class="problem-card">
-                        <h2>Smart Inventory Management</h2>
-                        <p>Develop an IoT-based system to monitor and manage inventory levels in real-time, reducing
-                            waste and optimizing stock levels.</p>
-                    </div>
-
-                    <div class="problem-card">
-                        <h2>Predictive Maintenance for Transport Fleets</h2>
-                        <p>Create a predictive maintenance system for transportation fleets using IoT sensors and
-                            machine learning to minimize downtime and reduce costs.</p>
-                    </div>
-
-                    <div class="problem-card">
-                        <h2>Healthcare Data Analytics</h2>
-                        <p>Design a data analytics platform for healthcare providers to analyze patient data and improve
-                            treatment outcomes using predictive analytics.</p>
-                    </div>
-
-                    <div class="problem-card">
-                        <h2>IoT-enabled Smart City Solutions</h2>
-                        <p>Build an IoT-based platform to enhance urban living by integrating smart lighting, waste
-                            management, and traffic monitoring systems.</p>
-                    </div>
-
-                </div>
+            <div class="ps-wait-container">
+                <h2 class="announcement-title">Problem Statements</h2>
+                <p class="announcement-details">
+                    Problem statements will be <span class="highlight">live on December 5th at 10:00 AM</span>. 
+                    Please stay tuned for the latest updates and prepare for an exciting challenge.
+                </p>
             </div>
         </div>
     </section>
 
-    <div id="problemModal" class="modal-overlay">
-        <div class="hologram-modal">
-
-            <h2 id="modalTitle">Problem Title</h2>
-            <p id="modalDescription">Detailed problem description...</p>
-            <div id="modalDetails">
-
-            </div>
-            <button class="return-btn" onclick="closeProblemModal()">Return</button>
-        </div>
-    </div>
-
-    <!-- Updated Footer -->
     <footer class="cyber-footer">
         <div class="container">
             <div class="row">
@@ -248,17 +120,17 @@
                         <ul class="cyber-footer-links">
                             <li><a href="https://www.google.com/maps/place/BMS+Institute+of+Technology+and+Management/@13.133363,77.5673768,15z/data=!4m2!3m1!1s0x0:0x49c4c47a68a60b9c?sa=X&ved=2ahUKEwie0qXhxqODAxVdyzgGHc2iBo0Q_BJ6BAhdEAA"
                                     target="_blank" class="cyber-footer-links">Campus Map</a></li>
-                            <li><a href="https://drive.google.com/file/d/1KEiJNbwnKTV2YA2pgCnLJh3Kmg2E8K2H/view?usp=sharing"
+                            <li><a href="https://drive.google.com/file/d/1gEru9NM3J0x-5VCtzmQUKNc0HR3sygVo/view?usp=drive_link"
                                     target="_blank" class="cyber-footer-links">Code of Conduct</a></li>
-                            <li><a href="https://drive.google.com/file/d/1zbTTXwcvCVpX0sRNQe6ezivePUYEIKwv/view?usp=sharing"
+                            <li><a href="https://drive.google.com/file/d/1e88R1M6mhOMR95z_HW210E01zAWIm0QX/view?usp=drive_link"
                                     target="_blank" class="cyber-footer-links">Privacy Policy</a></li>
-                            <li><a href="https://drive.google.com/file/d/1dqU8tj1mLavczRrX_Mrt83eRcCGzPleX/view?usp=sharing"
+                            <li><a href="https://drive.google.com/file/d/1RNqmS5H4O6q7xvzBepRHelDnU6ztNEoL/view?usp=drive_link"
                                     target="_blank" class="cyber-footer-links">Terms & Conditions</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
-                    <h4 class="cyber-footer-title">BMS Institute of Technology and Management</h4>
+                    <h5 class="cyber-footer-title">BMS Institute of Technology and Management</h5>
                     <p class="cyber-footer-text">Doddaballapur Main Road, Avalahalli, Yelahanka, Bengaluru, Karnataka
                         560064</p>
                 </div>
@@ -316,10 +188,6 @@
         </div>
     </footer>
 
-    <script src="./js/ps.js">
-
-
-    </script>
 </body>
 
 </html>
