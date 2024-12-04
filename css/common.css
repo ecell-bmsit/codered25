@@ -89,7 +89,7 @@ body {
     right: 0;
     bottom: 0;
     background-image: linear-gradient(120deg, rgba(251, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 50%),
-                      linear-gradient(60deg, rgba(251, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 50%);
+        linear-gradient(60deg, rgba(251, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 50%);
     background-size: 60px 60px;
     opacity: 0.3;
     z-index: -1;
@@ -166,7 +166,7 @@ body {
     .row {
         flex-direction: column;
     }
-    
+
     .col-lg-6 {
         width: 100%;
         margin-bottom: 2rem;
@@ -188,7 +188,9 @@ body {
         padding: 1rem;
         min-width: calc(50% - 0.75rem);
     }
-}.cyber-stats {
+}
+
+.cyber-stats {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -238,7 +240,7 @@ body {
     .row {
         flex-direction: column;
     }
-    
+
     .col-lg-6 {
         width: 100%;
         margin-bottom: 2rem;
@@ -328,6 +330,7 @@ body {
     padding: 0.3rem 0;
     position: relative;
 }
+
 .footer-logo {
     height: 60px;
     width: auto;
@@ -378,6 +381,7 @@ body {
     padding: 2rem;
     background: rgba(251, 0, 0, 0.05);
 }
+
 #sponsor {
     background: radial-gradient(circle at 50% 50%, rgba(251, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%);
 }
@@ -392,40 +396,40 @@ body {
     .cyber-main-text {
         font-size: 4rem !important;
     }
-    
+
     .cyber-section-title {
         font-size: 2rem;
     }
-    
+
     .cyber-stats {
         flex-wrap: wrap;
         gap: 1rem;
     }
-    
+
     .stat-item {
         min-width: calc(50% - 1rem);
         flex: 1 1 calc(50% - 1rem);
     }
-    
+
     .stat-item .number {
         font-size: 2.5rem;
     }
-    
+
     .cyber-footer {
         text-align: center;
         padding: 3rem 0;
     }
-    
+
     .cyber-footer h4::after {
         left: 25%;
         width: 50%;
     }
-    
+
     .cyber-social-links {
         justify-content: center;
         flex-wrap: wrap;
     }
-    
+
     .social-link {
         flex: 1 1 calc(50% - 1.5rem);
         min-width: 120px;
@@ -438,16 +442,33 @@ body {
 
 
 @keyframes glowText {
-    0% { text-shadow: 0 0 5px rgba(251, 0, 0, 0.3); }
-    50% { text-shadow: 0 0 20px rgba(251, 0, 0, 0.6); }
-    100% { text-shadow: 0 0 5px rgba(251, 0, 0, 0.3); }
+    0% {
+        text-shadow: 0 0 5px rgba(251, 0, 0, 0.3);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(251, 0, 0, 0.6);
+    }
+
+    100% {
+        text-shadow: 0 0 5px rgba(251, 0, 0, 0.3);
+    }
 }
 
 @keyframes borderGlow {
-    0% { box-shadow: 0 0 5px rgba(251, 0, 0, 0.3); }
-    50% { box-shadow: 0 0 20px rgba(251, 0, 0, 0.6); }
-    100% { box-shadow: 0 0 5px rgba(251, 0, 0, 0.3); }
+    0% {
+        box-shadow: 0 0 5px rgba(251, 0, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(251, 0, 0, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(251, 0, 0, 0.3);
+    }
 }
+
 .scroll-reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -510,7 +531,7 @@ body {
     letter-spacing: 2px;
     font-size: 1.1rem;
     cursor: pointer;
-    
+
 }
 
 .cyber-btn-scroll:hover {
@@ -535,6 +556,7 @@ body {
     width: calc(100% + 20px);
     height: calc(100% + 20px);
 }
+
 #scrollUpBtn {
     display: none;
     position: fixed;
@@ -550,9 +572,3 @@ body {
     padding-right: 20px;
     padding-left: 20px;
 }
-
-
-
-
-
-
