@@ -80,7 +80,7 @@ body {
     padding-right: 1rem;
 }
 
-/* Keeping existing background effect */
+
 .cyber-section::before {
     content: '';
     position: absolute;
