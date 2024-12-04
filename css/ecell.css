@@ -89,7 +89,7 @@ nav {
     position: relative;
     overflow: hidden;
     font-family: 'valorant', sans-serif;
-    height: 300px;
+    height: 360px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,12 +97,12 @@ nav {
 }
 
 .volunteer-image {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--accent-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     transition: transform 0.3s ease;
 }
 
@@ -162,6 +162,15 @@ nav {
 @media (max-width: 1024px) {
     .volunteer-container {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .volunteer-image {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .volunteer-card {
+        height: 340px;
     }
 }
 
