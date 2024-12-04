@@ -33,6 +33,8 @@ body {
     background-color: var(--dark-background);
     color: white;
     overflow-x: hidden;
+    
+   
 }
 nav {
     margin: 0;
@@ -48,350 +50,58 @@ nav {
     transition: all 0.3s ease;
 }
 
-.cyberpunk-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(18,18,40,0.9));
+
+
+#psWait {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;  
+    padding: 4rem 1rem;
+    
 }
 
-
-.problem-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 2rem;
-    perspective: 1000px;
-    padding-bottom: 1.6rem;
-}
-
-.problem-card {
-    background-color: var(--grid-background);
+.ps-wait-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    /* max-width: 800px; */
+    width: 100%;
+    background: rgba(18, 18, 40, 0.8);
     border: 2px solid var(--neon-blue);
-    cursor: pointer;
+    border-radius: 8px;
+    padding: 3rem;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    backdrop-filter: blur(10px);
+  
+}
+
+.announcement-title {
     font-family: 'valorant', sans-serif;
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    transform-style: preserve-3d;
-    transform: rotateX(0) rotateY(0);
-    box-shadow: 
-        0 10px 20px rgba(0,0,0,0.4),
-        0 0 20px var(--neon-blue);
-}
-
-.problem-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg, 
-        transparent, 
-        var(--neon-blue), 
-        transparent
-    );
-    animation: scan 3s linear infinite;
-    opacity: 0.1;
-}
-
-.problem-card:hover {
-    transform: scale(1.05) rotateX(0) rotateY(0);
-    box-shadow: 
-        0 15px 30px rgba(0,0,0,0.6),
-        0 0 40px var(--neon-pink);
-}
-
-.problem-card h2 {
-    color: var(--neon-blue);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: white;
+    margin-bottom: 2rem;
     text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.announcement-details {
+    font-family: 'eurostile', sans-serif;
+    font-size: 1.6rem;
+    color: #ffffff;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 600px;
     letter-spacing: 2px;
 }
 
-.problem-card p {
-    color: #b0b0c0;
-    font-size: 0.9rem;
+.highlight {
+    color: var(--neon-pink);
+    font-weight: bold;
 }
 
 
-@keyframes scan {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@media (max-width: 768px) {
-    .problem-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.modal-overlay.show {
-    display: flex;
-    overflow-y: auto;
-    opacity: 1;
-}
-
-.hologram-modal {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 800px;
-    max-height: 90vh;
-    background: rgba(18, 18, 40, 0.9);
-    border: 2px solid var(--neon-blue);
-    border-radius: 15px;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-    transform: none;
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.hologram-modal::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg, 
-        transparent, 
-        var(--neon-blue), 
-        transparent
-    );
-    animation: scan 3s linear infinite;
-    opacity: 0.1;
-}
-
-
-
-.hologram-modal .return-btn {
-    position: static;
-    align-self: center;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    background: var(--neon-pink);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.hologram-modal .return-btn:hover {
-    background: var(--neon-blue);
-    transform: scale(1.05);
-}
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-body.modal-open {
-    overflow: hidden;
-}
-
-
-
-@media (max-width: 768px) {
-    .problem-card {
-        clip-path: none;
-        border-radius: 8px;
-        padding: 1.2rem;
-        position: relative;
-
-        background: linear-gradient(
-            to bottom right, 
-            rgba(18, 18, 40, 0.95), 
-            rgba(30, 30, 60, 0.95)
-        );
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease, border 0.3s ease;
-    }
-
-    .problem-card:hover {
-        transform: translateY(-5px);
-        border: 2px solid var(--neon-pink);
-    }
-
-   
-    .problem-card::before, 
-    .problem-card::after {
-        content: '';
-        position: absolute;
-        width: 20%;
-        height: 2px;
-        background: var(--neon-blue);
-        transition: all 0.3s ease;
-    }
-
-    .problem-card::before {
-        top: 0;
-        left: 0;
-    }
-
-    .problem-card::after {
-        bottom: 0;
-        right: 0;
-        transform: rotate(180deg);
-    }
-
-    .problem-card:hover::before, 
-    .problem-card:hover::after {
-        width: 40%;
-    }
-
-    .problem-card h2 {
-        font-size: 1.2rem;
-        color: var(--neon-blue);
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        font-weight: bold;
-    }
-
-    .problem-card p {
-        font-size: 0.85rem;
-        color: #b0b0c0;
-        line-height: 1.5;
-    }
-}
-
-@media (max-width: 480px) {
-    .problem-card {
-        padding: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1.3fr));
-    }
-
-    
-    .problem-card::before, 
-    .problem-card::after {
-        content: '';
-        position: absolute;
-        width: 20%;
-        height: 2px;
-        background: var(--neon-blue);
-        transition: all 0.3s ease;
-    }
-
-    .problem-card::before {
-        top: 0;
-        left: 0;
-    }
-
-    .problem-card::after {
-        bottom: 0;
-        right: 0;
-        transform: rotate(180deg);
-    }
-
-    .problem-card:hover::before, 
-    .problem-card:hover::after {
-        width: 40%;
-    }
-
-    .problem-card h2 {
-        font-size: 1rem;
-    }
-   
-    .problem-card  {
-        font-size: 0.5rem;
-        margin-bottom: 0.8rem;
-    }
-    
-}
-
-@media (max-width: 480px) {
-    .hologram-modal {
-        padding: 2rem;
-        font-size: 0.8rem; 
-        max-width: 90%; 
-        max-height: 85vh;
-        overflow-y: auto;
-    }
-
-    .hologram-modal p {
-        font-size: 0.7rem; 
-        margin-bottom: 1rem; 
-    }  
-
-    .hologram-modal h2 {
-        font-size: 1rem; 
-        margin-bottom: 1rem;
-    }
-
-    .hologram-modal .return-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.75rem;
-        margin-top: 1.5rem;
-    }
-}
-
-
-
-@media (max-width: 768px) {
-    .hologram-modal {
-          padding: 1.5rem;
-
-        max-width: 400px;
-
-         max-height: 80vh;
-
-          font-size: 0.9rem;
-
-           overflow-y: scroll;
-
-            scrollbar-width: none; /* Firefox */
-            overflow-y: auto;
-   
-      
-    }
-
-
-
-   
-    .hologram-modal::-webkit-scrollbar { 
-        display: none;  
--ms-overflow-style: none;  /* Internet Explorer 10+ */
-     
-    }
-
-    .hologram-modal .return-btn {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.85rem;
-    }
-
-    .hologram-modal::before {
-        animation: scan 4s linear infinite; 
-    }
-}
