@@ -12,6 +12,7 @@
     font-family: 'eurostile';
     src: url('./fonts/EuroStyleNormal.ttf') format('truetype');
 }
+
 :root {
     --cyber-red: #dd0000;
     --cyber-red-transparent: rgba(221, 0, 0, 0.05);
@@ -48,12 +49,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem; 
-    padding-top: 2rem; 
+    gap: 1rem;
+    padding-top: 2rem;
 }
+
 .cyber-text:first-of-type {
-   
-    margin-bottom: 0.5rem; 
+
+    margin-bottom: 0.5rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     opacity: 0.8;
@@ -66,7 +68,7 @@
     width: 200%;
     height: 200%;
     opacity: 0.7;
-    background-image: 
+    background-image:
         linear-gradient(transparent 97%, rgba(40, 48, 200, 0.34) 97%),
         linear-gradient(90deg, transparent 97%, rgba(32, 76, 209, 0.463) 97%);
     background-size: clamp(20px, 4vw, 40px) clamp(20px, 4vw, 40px);
@@ -86,21 +88,23 @@
     justify-content: center;
     gap: clamp(0.5rem, 1.5vh, 1.5rem);
 }
+
 .cyber-main-text {
     font-family: 'sd-dystopian', sans-serif;
     color: var(--cyber-red);
-    font-size: clamp(1.8rem, 16vw, 7rem); 
+    font-size: clamp(1.8rem, 16vw, 7rem);
     text-transform: uppercase;
     position: relative;
     letter-spacing: 0.01em;
     line-height: 1;
     text-shadow: 0 0 10px rgba(221, 0, 0, 0.5);
     text-align: center;
-    display: inline-block; /* Changed from width:100% to inline-block */
+    display: inline-block;
+    /* Changed from width:100% to inline-block */
 }
 
 .maintext-year {
-    font-size: clamp(0.7rem, 8vw, 3rem); 
+    font-size: clamp(0.7rem, 8vw, 3rem);
     color: var(--cyber-red);
     font-family: 'valorant', sans-serif !important;
     vertical-align: super;
@@ -108,27 +112,32 @@
     position: relative;
     top: -0.5em;
     display: inline-block;
-    
+
 }
 
 @media (max-width: 480px) {
-    .cyber-main-text, .maintext-year {
+
+    .cyber-main-text,
+    .maintext-year {
         display: inline-block;
         vertical-align: baseline;
     }
+
     .maintext-year {
         font-size: clamp(0.7rem, 6vw, 2rem);
         top: -0.9em;
     }
 }
+
 .cyber-subtitle {
     font-family: 'valorant', sans-serif;
-    font-size: clamp(1rem, 3vw, 1.2rem); 
+    font-size: clamp(1rem, 3vw, 1.2rem);
     color: var(--cyber-white);
     letter-spacing: 0.1em;
-    margin: 0.25rem 0; 
+    margin: 0.25rem 0;
     text-align: center;
 }
+
 .hero-buttons {
     display: flex;
     justify-content: center;
@@ -145,8 +154,9 @@
     margin: 0;
     text-align: center;
 }
+
 .cyber-text:nth-of-type(2) {
-    font-size: 1.5rem !important; 
+    font-size: 1.5rem !important;
     margin: 0.5rem 0;
     font-style: italic;
 }
@@ -168,7 +178,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-width: clamp(80px, 15vw, 100px); 
+    min-width: clamp(80px, 15vw, 100px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,6 +220,7 @@
     min-width: 180px;
     z-index: 1;
 }
+
 .cyber-btn:before {
     content: '';
     position: absolute;
@@ -234,6 +245,7 @@
     position: relative;
     top: -0.5em;
 }
+
 .cyber-text:last-of-type {
     font-size: 0.9rem !important;
     opacity: 0.7;
@@ -247,14 +259,27 @@
 }
 
 @keyframes gradientBG {
-    0% { background-position: 25% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 25% 50%; }
+    0% {
+        background-position: 25% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 25% 50%;
+    }
 }
 
 @keyframes gridAnimation {
-    0% { transform: perspective(1000px) rotateX(60deg) translateY(0); }
-    100% { transform: perspective(1000px) rotateX(60deg) translateY(100px); }
+    0% {
+        transform: perspective(1000px) rotateX(60deg) translateY(0);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateX(60deg) translateY(100px);
+    }
 }
 
 @media (max-width: 768px) {
@@ -279,23 +304,24 @@
 }
 
 @media (max-width: 480px) {
-    
+
     .cyber-timer {
         gap: 0.5rem;
     }
-    
+
     .time-block {
         min-width: 70px;
         padding: 0.5rem;
     }
-    
+
     .time-block span {
         font-size: 1.25rem;
     }
-    
+
     .time-block label {
         font-size: 0.65rem;
     }
+
     .hero-buttons {
         gap: 0.75rem;
     }
@@ -305,7 +331,7 @@
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
     }
-    
+
 }
 
 /* About Section */

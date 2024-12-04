@@ -1,4 +1,3 @@
-
 :root {
     --cyber-primary: #890408;
     --cyber-secondary: #FB0000;
@@ -7,6 +6,7 @@
     --cyber-light: #FFFFFF;
     --cyber-gradient: linear-gradient(135deg, var(--cyber-primary), var(--cyber-secondary));
 }
+
 #timeline {
     perspective: 1000px;
     background: linear-gradient(180deg, rgba(251, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
@@ -38,6 +38,7 @@
     position: relative;
     margin-bottom: 3rem;
 }
+
 .timeline-item:hover {
     transform: translateZ(20px);
 }
@@ -64,7 +65,7 @@
     border: 2px solid var(--cyber-red);
     padding: 1.5rem;
     position: relative;
-    
+
     clip-path: polygon(0 10px, 10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px));
 }
 
@@ -91,20 +92,20 @@
     .timeline-line {
         left: 20px;
     }
-    
+
     .timeline-item {
         padding-right: 0;
         padding-left: 50px;
     }
-    
+
     .timeline-item.right {
         padding-left: 50px;
     }
-    
+
     .timeline-dot {
         left: 10px;
     }
-    
+
     .timeline-content {
         width: 100%;
     }

@@ -95,55 +95,55 @@
 
 @media screen and (max-width: 1200px) {
   .participate-content {
-      gap: 3rem;
+    gap: 3rem;
   }
 }
 
 @media screen and (max-width: 992px) {
   .participate-content {
-      gap: 2rem;
+    gap: 2rem;
   }
-  
+
   .participate-reason h3 {
-      font-size: 1.3rem;
+    font-size: 1.3rem;
   }
-  
+
   .participate-reason p {
-      font-size: 0.95rem;
+    font-size: 0.95rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .participate-content {
-      flex-direction: column;
-      gap: 3rem;
+    flex-direction: column;
+    gap: 3rem;
   }
-  
+
   .participate-image,
   .participate-reasons {
-      flex: 0 0 100%;
+    flex: 0 0 100%;
   }
-  
+
   .participate-title {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .participate-section {
-      padding: 40px 0;
+    padding: 40px 0;
   }
-  
-    
+
+
   .participate-title {
-      font-size: 1.75rem;
+    font-size: 1.75rem;
   }
-  
+
   .participate-reason h3 {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
-  
+
   .participate-reason p {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 }
