@@ -365,13 +365,12 @@
     </section>
 
     <section class="sponsors-section">
-        <div class="sponsors-container">
-            <h2 class="sponsors-title">Our Sponsors</h2>
-            <div class="sponsors-carousel" id="sponsorsCarousel">
-               
-            </div>
-        </div>
+        <h2 class="sponsors-title">Our Sponsors</h2>
+        <div class="sponsors-grid" id="sponsorsGrid"></div>
     </section>
+
+
+
     <!-- FAQ Section -->
     <section id="faq" class="cyber-section">
         <div class="faq-header">
@@ -570,54 +569,45 @@
         });
 
         const sponsors = [
-            { 
-                logo: '/api/placeholder/150/150', 
-                name: 'Sponsor One' 
+            {
+                logo: './img/sponsors/predator.jpg',
+                name: 'Predator Energy'
             },
-            { 
-                logo: '/api/placeholder/150/150', 
-                name: 'Sponsor Two' 
+            {
+                logo: './img/sponsors/quantech.png',
+                name: 'Quantech'
             },
-            { 
-                logo: '/api/placeholder/150/150', 
-                name: 'Sponsor Three' 
+            {
+                logo: './img/sponsors/xyz.png',
+                name: '.XYZ'
             },
-            { 
-                logo: '/api/placeholder/150/150', 
-                name: 'Sponsor Four' 
+            {
+                logo: './img/sponsors/metamorf.jpeg',
+                name: 'metamorf'
             }
         ];
 
-        const carousel = document.getElementById('sponsorsCarousel');
-        const totalLogos = sponsors.length;
-        const radius = 250;
+        const sponsorsGrid = document.getElementById('sponsorsGrid');
 
-        sponsors.forEach((sponsor, index) => {
+        sponsors.forEach(sponsor => {
             const sponsorCard = document.createElement('div');
             sponsorCard.classList.add('sponsor-card');
-            
+
             const logo = document.createElement('div');
             logo.classList.add('sponsor-logo');
-            
+
             const img = document.createElement('img');
             img.src = sponsor.logo;
             img.alt = sponsor.name;
-            
+
             const name = document.createElement('div');
             name.classList.add('sponsor-name');
             name.textContent = sponsor.name;
-            
+
             logo.appendChild(img);
             sponsorCard.appendChild(logo);
             sponsorCard.appendChild(name);
-            carousel.appendChild(sponsorCard);
-
-            // Position logos in a circular arrangement
-            const angle = (index / totalLogos) * Math.PI * 2;
-            sponsorCard.style.transform = `
-                rotateY(${angle}rad) 
-                translateZ(${radius}px)
-            `;
+            sponsorsGrid.appendChild(sponsorCard);
         });
 
     </script>
