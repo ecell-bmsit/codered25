@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeRed '25</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="./css/timer.css">
+</head>
+<body>
+    <div id="particles-bg"></div>
+    <div class="hero-section">
+        <div class="header-text">EcellxBMSIT&M Presents</div>
+        <div class="title-container">
+            <span class="main-text">CODE RED</span><span class="year">'25</span>
+        </div>
+        <div class="tagline">Code Till You Drop.</div>
+
+       
+
+        <div class="countdown">
+            <div class="time-block">
+                <p class="time-value" id="hours">25</p>
+                <p class="time-label">Hours</p>
+            </div>
+            <div class="time-block">
+                <p class="time-value" id="minutes">00</p>
+                <p class="time-label">Minutes</p>
+            </div>
+            <div class="time-block">
+                <p class="time-value" id="seconds">00</p>
+                <p class="time-label">Seconds</p>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+        <div class="footer-text">Keep Hacking!</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baffle.js/0.3.6/baffle.min.js"></script>
+    <script src="./js/timer.js"></script>
+    <script>
+          class HackathonTimer {
+            constructor() {
+               
+                this.startTime = new Date('2025-01-09T11:00:00').getTime(); 
+                this.duration = 25 * 60 * 60 * 1000; 
+                this.endTime = this.startTime + this.duration;
+                
+                this.elements = {
+                    hours: document.getElementById('hours'),
+                    minutes: document.getElementById('minutes'),
+                    seconds: document.getElementById('seconds'),
+                    progressFill: document.getElementById('progressFill'),
+                    footerText: document.querySelector('.footer-text')
+                };
+
+                this.messages = [
+                    { time: '2025-01-09T11:00:00', message: 'Start Hacking!' },
+                    { time: '2025-01-09T11:00:00', message: 'Dinner!' },
+                    { time: '2025-01-09T12:00:00', message: 'Keep Hacking!' },
+                    { time: '2025-01-09T18:00:00', message: 'Phase 1 Evaluation' }
+                ];
+
+                this.initializeTimer();
+            }
+
+            initializeTimer() {
+                this.updateTimer();
+                setInterval(() => this.updateTimer(), 1000);
+            }
+
+            updateTimer() {
+                const now = new Date().getTime();
+                
+              
+                if (now < this.startTime) {
+                    const remainingToStart = this.startTime - now;
+                    this.updateTimeDisplay(remainingToStart);
+                    this.elements.progressFill.style.width = '0%';
+                    return;
+                }
+                
+            
+                if (now > this.endTime) {
+                    this.handleTimeUp();
+                    return;
+                }
+                
+                
+                const elapsedTime = now - this.startTime;
+                const remainingTime = this.endTime - now;
+                const progress = (elapsedTime / this.duration) * 100;
+                
+                this.updateProgress(progress);
+                this.updateTimeDisplay(remainingTime);
+                this.updateMessage(now);
+            }
+
+            updateProgress(progress) {
+                this.elements.progressFill.style.width = `${Math.min(progress, 100)}%`;
+            }
+
+            updateTimeDisplay(remainingTime) {
+                const hours = Math.floor(remainingTime / (1000 * 60 * 60));
+                const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+                this.elements.hours.textContent = String(hours).padStart(2, '0');
+                this.elements.minutes.textContent = String(minutes).padStart(2, '0');
+                this.elements.seconds.textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateMessage(now) {
+               
+                const currentMessage = [...this.messages]
+                    .reverse()
+                    .find(msg => now >= new Date(msg.time).getTime());
+                
+                if (currentMessage) {
+                    this.elements.footerText.textContent = currentMessage.message;
+                }
+            }
+
+            handleTimeUp() {
+                this.elements.hours.textContent = "00";
+                this.elements.minutes.textContent = "00";
+                this.elements.seconds.textContent = "00";
+                this.elements.progressFill.style.width = '100%';
+                this.elements.footerText.textContent = "Time's Up!";
+            }
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            new HackathonTimer();
+            
+            // Baffle text effects remain the same
+            let b = baffle('.main-text', {
+                characters: '▓▒░█ <>/[]{}'.split(''),
+                speed: 50
+            });
+
+            b.start().reveal(2000, 800);
+            setInterval(() => {
+                b.start().reveal(2000, 800);
+            }, 10000);
+
+            let c = baffle('.year', {
+                characters: '▓▒░█ <>/[]{}'.split(''),
+                speed: 50
+            });
+
+            c.start().reveal(2000, 800);
+            setInterval(() => {
+                c.start().reveal(2000, 800);
+            }, 10000);
+        });
+
+    </script>
+</body>
+</html>
