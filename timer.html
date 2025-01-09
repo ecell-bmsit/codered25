@@ -44,110 +44,140 @@
     <script src="./js/timer.js"></script>
     <script>
         class HackathonTimer {
-            constructor() {
-               
-                this.startTime = new Date().getTime();
-                this.duration = 25 * 60 * 60 * 1000;
-                this.endTime = this.startTime + this.duration;
-                
-                this.elements = {
-                    hours: document.getElementById('hours'),
-                    minutes: document.getElementById('minutes'),
-                    seconds: document.getElementById('seconds'),
-                    progressFill: document.getElementById('progressFill'),
-                    footerText: document.querySelector('.footer-text')
-                };
+    constructor() {
+        const today = new Date();
+        
+        
+        this.startTime = new Date(
+            today.getFullYear(),
+            today.getMonth(),
+            today.getDate(),
+            11, // 11 AM
+            0, // 0 minutes
+            0
+        ).getTime();
+        
+        this.duration = 25 * 60 * 60 * 1000; // 25 hours in milliseconds
+        this.endTime = this.startTime + this.duration;
+        
+        this.elements = {
+            hours: document.getElementById('hours'),
+            minutes: document.getElementById('minutes'),
+            seconds: document.getElementById('seconds'),
+            progressFill: document.getElementById('progressFill'),
+            footerText: document.querySelector('.footer-text')
+        };
 
-                // Define events relative to start time
-                this.messages = [
-                    { timeOffset: 0, message: 'Start Hacking!' },
-                    { timeOffset: 4 * 3600000, message: 'Dinner Time!' }, // 4 hours after start
-                    { timeOffset: 12 * 3600000, message: 'Phase 1 Evaluation' }, 
-                    { timeOffset: 20 * 3600000, message: 'Final Sprint!' }, 
-                    { timeOffset: this.duration, message: "Time's Up!" }
-                ];
+        this.messages = [
+            { timeOffset: 0, message: 'Start Hacking!' },
+            { timeOffset: 2.5 * 3600000, message: 'Lunch Time!' },
+            { timeOffset: 3.5 * 3600000, message: 'Continue Hacking!' },
+            { timeOffset: 7 * 3600000, message: 'Phase 1 Evaluation' },
+            { timeOffset: 8.5 * 3600000, message: 'Continue Hacking!' },
+            { timeOffset: 9.5 * 3600000, message: 'Dinner Time!' },
+            { timeOffset: 10.5 * 3600000, message: 'Continue Hacking!' },
+            { timeOffset: 21 * 3600000, message: 'Breakfast Time!' },
+            { timeOffset: 22 * 3600000, message: 'Final Sprint!' },
+            { timeOffset: this.duration, message: "Time's Up!" }
+        ];
 
-                this.initializeTimer();
-            }
+        this.initializeTimer();
+    }
 
-            initializeTimer() {
-                this.updateTimer();
-                setInterval(() => this.updateTimer(), 1000);
-            }
+    initializeTimer() {
+        this.updateTimer();
+        setInterval(() => this.updateTimer(), 1000);
+    }
 
-            updateTimer() {
-                const now = new Date().getTime();
-                const elapsedTime = now - this.startTime;
-                const remainingTime = this.endTime - now;
-                
-                if (remainingTime <= 0) {
-                    this.handleTimeUp();
-                    return;
-                }
-                
-                const progress = (elapsedTime / this.duration) * 100;
-                this.updateProgress(progress);
-                this.updateTimeDisplay(remainingTime);
-                this.updateMessage(elapsedTime);
-            }
-
-            updateProgress(progress) {
-                const clampedProgress = Math.max(0, Math.min(progress, 100));
-                this.elements.progressFill.style.width = `${clampedProgress}%`;
-            }
-
-            updateTimeDisplay(remainingTime) {
-                const hours = Math.floor(remainingTime / (1000 * 60 * 60));
-                const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
-                this.elements.hours.textContent = String(hours).padStart(2, '0');
-                this.elements.minutes.textContent = String(minutes).padStart(2, '0');
-                this.elements.seconds.textContent = String(seconds).padStart(2, '0');
-            }
-
-            updateMessage(elapsedTime) {
-                const currentMessage = [...this.messages]
-                    .reverse()
-                    .find(msg => elapsedTime >= msg.timeOffset);
-                
-                if (currentMessage) {
-                    this.elements.footerText.textContent = currentMessage.message;
-                }
-            }
-
-            handleTimeUp() {
-                this.elements.hours.textContent = "00";
-                this.elements.minutes.textContent = "00";
-                this.elements.seconds.textContent = "00";
-                this.updateProgress(100);
-                this.elements.footerText.textContent = "Time's Up!";
-            }
+    updateTimer() {
+        const now = new Date().getTime();
+        
+        // Calculate elapsed and remaining time
+        let elapsedTime = now - this.startTime;
+        let remainingTime = this.endTime - now;
+        
+        // If timer hasn't started yet
+        if (elapsedTime < 0) {
+            elapsedTime = 0;
+            remainingTime = this.duration;
+            this.elements.footerText.textContent = "Hackathon starts soon!";
+            this.updateProgress(0);
+            this.updateTimeDisplay(this.duration);
+            return;
         }
+        
+        // If timer is finished
+        if (remainingTime <= 0) {
+            this.handleTimeUp();
+            return;
+        }
+        
+        // Calculate progress percentage
+        const progress = (elapsedTime / this.duration) * 100;
+        this.updateProgress(progress);
+        this.updateTimeDisplay(remainingTime);
+        this.updateMessage(elapsedTime);
+    }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            new HackathonTimer();
-            
-            const baffleOptions = {
-                characters: '▓▒░█ <>/[]{}'.split(''),
-                speed: 50
-            };
-
-            const mainText = baffle('.main-text', baffleOptions);
-            const yearText = baffle('.year', baffleOptions);
-
-            function animateText(element) {
-                element.start().reveal(2000, 800);
-            }
-
-            animateText(mainText);
-            animateText(yearText);
-
-            setInterval(() => {
-                animateText(mainText);
-                animateText(yearText);
-            }, 10000);
+    updateProgress(progress) {
+        const clampedProgress = Math.max(0, Math.min(progress, 100));
+        requestAnimationFrame(() => {
+            this.elements.progressFill.style.width = `${clampedProgress}%`;
         });
+    }
+
+    updateTimeDisplay(remainingTime) {
+        const hours = Math.floor(remainingTime / (1000 * 60 * 60));
+        const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+        this.elements.hours.textContent = String(hours).padStart(2, '0');
+        this.elements.minutes.textContent = String(minutes).padStart(2, '0');
+        this.elements.seconds.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateMessage(elapsedTime) {
+        const currentMessage = [...this.messages]
+            .reverse()
+            .find(msg => elapsedTime >= msg.timeOffset);
+        
+        if (currentMessage) {
+            this.elements.footerText.textContent = currentMessage.message;
+        }
+    }
+
+    handleTimeUp() {
+        this.elements.hours.textContent = "00";
+        this.elements.minutes.textContent = "00";
+        this.elements.seconds.textContent = "00";
+        this.updateProgress(100);
+        this.elements.footerText.textContent = "Time's Up!";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new HackathonTimer();
+    
+    const baffleOptions = {
+        characters: '▓▒░█ <>/[]{}'.split(''),
+        speed: 50
+    };
+
+    const mainText = baffle('.main-text', baffleOptions);
+    const yearText = baffle('.year', baffleOptions);
+
+    function animateText(element) {
+        element.start().reveal(2000, 800);
+    }
+
+    animateText(mainText);
+    animateText(yearText);
+
+    setInterval(() => {
+        animateText(mainText);
+        animateText(yearText);
+    }, 10000);
+});
     </script>
 </body>
 </html>

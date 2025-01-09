@@ -172,26 +172,62 @@ display: inline-block;
     );
 }
 
+
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, 
-        var(--cyber-red) 0%, 
-        #ff1a1a 50%, 
-        var(--cyber-red) 100%);
     width: 0%;
-    transition: width 0.5s linear;
-    position: relative;
+    background: linear-gradient(90deg, 
+    var(--cyber-red) 0%, 
+    #ff1a1a 50%, 
+    var(--cyber-red) 100%);
+    transition: width 0.5s ease-in-out;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    overflow: hidden; /* Important for containing the glow effect */
 }
 
 .progress-fill::after {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
-    width: 40px;
+    right: -150%; /* Start further outside */
+    width: 100px; /* Wider glow */
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    animation: glowAnimation 1.5s ease-in-out infinite;
+    filter: blur(5px); /* Add blur for softer glow */
+    transform: skewX(-25deg); /* Tilt the glow */
+    animation: glowAnimation 2s ease-in-out infinite;
+}
+
+@keyframes glowAnimation {
+    0% {
+        right: -150%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        right: 150%;
+        opacity: 0;
+    }
+}
+
+/* Add this for an extra shine effect */
+.progress-fill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%
+    );
 }
 
 .footer-text {
